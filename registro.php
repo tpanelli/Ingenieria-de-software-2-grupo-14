@@ -2,7 +2,7 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="estilos.css">
 	<title> UnAventon</title>
-	<script  type="text/javascript" src="validacion.js"> </script>
+	<script  type="text/javascript" src="funcionesValidacion.js"> </script>
 </head>
 <body class="body">
 <?php 
