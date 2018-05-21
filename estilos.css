@@ -1,0 +1,334 @@
+.barralog {
+	background-color:white;
+	height:14%;
+}
+.login {
+	text-align:right;
+	margin-right:2%;
+}
+.IconoInicio {
+		text-align:left;
+		width:30%;
+		height:18px;
+		margin-left:2%;
+		margin-top:0%;
+}
+.Registrarse { 
+		margin-top:5px;
+		margin-bottom:5px;
+		margin-right:50px;
+}
+.Password {
+		margin-top:5px;
+		margin-bottom:5px;
+}		
+.principal {
+	width:19%;
+	height:80%;
+	float:left;
+	margin-left:0.5%;
+	margin-right:0.5%;
+	text-align:left;
+	font-size:18px;
+}
+
+.after-box{
+	color:white;
+	background-color: black;
+	height:6%;
+	width: 100%;
+	text-align:center;
+	display: inline-block;
+	padding: 8px;
+    text-decoration: none;
+}
+.linea {
+	width: 100%;
+	background-color: #8000FF;
+	height: 4%;
+}
+.menu {
+	height:8%;
+	text-align:center;
+	padding:14px 16px;
+}
+ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color:#f17376;
+}
+
+li {
+    float:left;
+}
+ul li {
+	position:relative;
+}
+li a {
+    display:block;
+    color:white;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+}
+
+li a:hover:not(.active) {
+    background-color:#111;
+}
+.botonLogin {
+    background-color:black;
+    border:none;
+    color:white;
+    padding:16px 32px;
+    text-align:center;
+    text-decoration:none;
+    display:inline-block;
+    font-size:16px;
+    margin:4px 4px;
+    transition-duration:0.4s;
+    cursor:pointer;
+}
+.botonIniciarSesion {
+    background-color:#f17376; 
+    color:withe; 
+    border:2px solid grey;
+	float:right;
+	border-radius:9px;
+}
+.botonEntrar {
+	background-color:#c4c4c5; 
+    color:black; 
+    border:2px solid black;
+    padding:16px 32px;
+    text-align:center;
+    text-decoration:none;
+    display:inline-block;
+    font-size:16px;
+    margin: 22px 20% 0px 34%;
+    transition-duration:0.4s;
+	border-radius:9px;
+	border-color:white;
+    cursor: pointer;
+}
+.botonRegistrarse {
+	background-color:#f17376; 
+    color:white; 
+    border:2px solid black;
+    padding:16px 32px;
+    text-align:center;
+    text-decoration:none;
+    display:inline-block;
+    font-size:16px;
+    margin: 22px 20% 0px 30%;
+    transition-duration:0.4s;
+	border-radius:9px;
+	border-color:white;
+    cursor: pointer;
+}
+.buscador {
+	background-color:#bfbfbf; 
+    color:Black; 
+    border:0.5px solid black;
+    padding:13px 30px;
+    text-align:center;
+    display:inline-block;
+    font-size:16px;
+    margin: 22px 20% 0px 30%;
+	border-radius:9px;
+	border-color:grey;
+}
+
+.AlturaImagen {
+	height:70%;
+	width:100%;
+	margin-top:2%;
+}
+
+.registrar2{
+	margin:2.5% 2% 1% 1%;
+	border-radius:12px;
+	width:30%;
+	float:left;
+	background-color:#f17376;
+	opacity:0.9;
+}
+.viaje{
+	margin-top: 2%;
+	border-radius:12px;
+	width:60%;
+	float:left;
+	background-color:#f17376;
+	opacity:0.9;
+}
+.registrar {
+	margin:10px 35%;
+	border:6px solid #white;
+	border-radius:8px;
+	width:30%;
+	float:right;
+	background-color:#f17376;
+	opacity:0.8;
+}
+
+.estrellas{
+	font-size:45px;
+	text-decoration:none;
+	color:black;
+	float:right;
+	margin-left:30px;
+}
+
+.caballo {
+    width:90%;
+    padding:12px 20px;
+    margin:7px 15px ;
+    box-sizing:border-box;
+    border:none;
+	border-radius:9px;
+    background-color:white;
+    color:black;
+	
+}
+
+.botonLoginF {
+    background-color:black;
+    border:none;
+    color:white;
+    padding:10px 15px;
+    text-align:center;
+    text-decoration:none;
+    display:inline-block;
+    font-size:16px;
+    margin:1px 10px;
+    transition-duration:0.4s;
+    cursor:pointer;
+}
+.botonIniciarSesionF {
+    background-color:#8000FF; 
+    color:white; 
+	font-weight:800;
+	float:right;
+}
+.select {
+   font-size: 20px;
+   color: white;
+   border: 3px solid #ccc;
+   margin-top: 8;
+   background-color: #8000FF;
+   border-color: white;
+}
+.NoSeEncontraronResultados {
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    border: 6px solid #C6ABFE;
+    border-radius: 8px;
+    background-color: white;
+    opacity: 0.8;
+    margin: 50px 35%;
+    padding: 20px;
+	text-decoration:none;
+}
+.botonComentario {
+	margin: 1.5% 2% 2% 2%;
+	background-color:#8000FF; 
+    color:white; 
+    border:2px solid black;
+    padding:16px 32px;
+    text-align:center;
+    text-decoration:none;
+    display:inline-block;
+    font-size:16px;
+    transition-duration:0.4s;
+	border-radius:9px;
+	border-color:white;
+    cursor: pointer;
+}
+
+.comentario{
+	width: 700px;
+	height:60px;
+	margin:0% 2% 2% 28%;
+	padding:12px 20px;
+	border:6px solid white;
+	border-radius:8px;
+	float:left;
+	resize: none;
+	background-color:black;
+	color:white;
+	font-weight: 750;
+	opacity:0.6;
+	
+}
+
+.ParaComentar{
+	text-align: center;
+	width: 400px;
+	font-size: 20px;
+	height:30px;
+	margin:0% 2% 2% 40%;
+	padding:12px 20px;
+	border: 6px solid #C6ABFE;
+    border-radius: 8px;
+    background-color: black;
+    opacity: 0.8;
+	float:left;
+	resize: none;
+	color:white;
+	font-weight: 900;
+}
+.listado {
+	height: 60px;
+	margin: 5px 5px 30px 35%;
+	padding: 5px 1px 5px 5px;
+	border:6px solid #C6ABFE;
+	border-radius:8px;
+	width:30%;
+	background-color:white;
+	display: inline-block;
+	opacity:0.8;
+}
+
+.botonEliminar {
+	background-color:#white; 
+    color:Black; 
+    text-align:center;
+    display:inline-block;
+    font-size:16px;
+    transition-duration:0.4s;
+	border-radius:9px;
+	border-color:white;
+    cursor: pointer;
+	padding:10px 10px 10px 10px;
+	margin-left: 5px;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	margin-right: 10px;
+}
+.tabla{
+	border:6px solid #C6ABFE;
+	border-radius:8px;
+	width: 35%;
+	margin-left: 31%;
+	margin-top: 10px;
+	background-color: #8000FF;
+	opacity: 0.8;
+}
+.nombre{
+	width: 23%;
+	margin-left: 1%;
+	font-weight: 100;
+	font-size: 22px;
+	color: white;
+	text-align: center;
+}
+.ee{
+	width: 7%;
+}
+label {
+	color: black;
+	margin-left:3%;
+}
+	
