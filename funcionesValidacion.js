@@ -81,6 +81,49 @@ function goBack() {
     history.back();
 }
 
+function Confirmar($mensaje){
+	var ok = confirm($mensaje); 
+            if (ok) 
+            { 
+                return true; 
+            } 
+            else 
+            { 
+                return false; 
+            }
+}
+
+function validarAgregar(){
+	var patente = document.agregar.patente.value
+	var modelo = document.agregar.modelo.value;
+    var marca = document.agregar.marca.value;
+    var capacidad = document.agregar.capacidad.value;
+    var color = document.agregar.color.value;
+	var tipo = document.agregar.tipo.value;
+    if(modelo && marca && capacidad && color && tipo && patente){
+		return true;
+	}
+	else{
+		alert ('Faltan completar campos');
+		return false;
+	}
+ }
+ 
+  function validarEditar(){
+	var modelo = document.editar.modelo.value;
+    var marca = document.editar.marca.value;
+    var capacidad = document.editar.capacidad.value;
+    var color = document.editar.color.value;
+	var tipo = document.editar.tipo.value;
+    if(modelo && marca && capacidad && color && tipo){
+		return true;
+	}
+	else{
+		alert ('Faltan completar campos');
+		return false;
+	}
+ }
+
 
 
 
