@@ -1,5 +1,5 @@
 <?php
-include_once 'conexionBD.php';
+include_once 'archivoconexion.php';
 $link = conectar();
 $ap = $_POST['apellido'];
 $n = $_POST['nombre'];
