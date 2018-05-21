@@ -3,8 +3,8 @@ include_once 'archivoconexion.php';
 $link = conectar();
 $ap = $_POST['apellido'];
 $n = $_POST['nombre'];
-$contr = $_POST['contra'];
-$confir = $_POST['contra2'];
+$contr = $_POST['contrasena'];
+$confir = $_POST['confirmar'];
 $mail = $_POST['mail'];
 $fecha = $_POST['fecha'];
 $com = mysqli_query($link, "SELECT * FROM `usuario` WHERE mail='$mail'");
@@ -19,11 +19,15 @@ if(!empty($ap) && !empty($n) && !empty($contr) && !empty($confir) && !empty($mai
 					if (mysqli_fetch_array($com) == 0) {
 						if (preg_match("/(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/", $contr) == 1){
 							if($contr == $confir){
-								echo $n;
-								echo $contr;
 								$var="INSERT INTO `usuario`(`mail`, `nombre`, `apellido`, `contrasenia`, `fechanac`)
 									VALUES ('$mail', '$n', '$ap', '$contr', '$fecha')";
 								mysqli_query($link, $var);
+								include 'validacion.php';
+								$acceso = new Acceso();
+								$acceso -> Comparar($mail,$contr);
+								ini_set("session.use_trans_sid", "0");
+								header('Location: index.php');
+								mysqli_close($link);
 							} else {
 								header('location: pagerrores.php?errores=noiguales');	
 							}

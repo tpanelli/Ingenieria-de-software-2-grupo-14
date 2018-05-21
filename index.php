@@ -2,13 +2,13 @@
 <head>
 <link rel="stylesheet" href="estilos.css">
 <meta charset="utf-8"/>
-<script src="validacion.js"></script>
+<script src="funcionesvalidacion.js"></script>
 </head>
-<body background="nasty_fabric_@2X.png">
+<body background="fondo.jpg">
 <?php include "barra.php";   ?>
 <div>
 	<ul>
-		<li><a href="indexAventon.php"> Inicio</a></li>
+		<li><a href="index.php"> Inicio</a></li>
 		<li><a href="index.php"> ¿Quienes somos?</a></li>
 	</ul>
 </div>

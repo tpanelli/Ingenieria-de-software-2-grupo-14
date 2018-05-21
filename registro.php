@@ -2,7 +2,7 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="estilos.css">
 	<title> UnAventon</title>
-	<script  type="text/javascript" src="funcionesValidacion.js"> </script>
+	<script  type="text/javascript" src="funcionesvalidacion.js"> </script>
 </head>
 <body class="body">
 <?php 
@@ -14,7 +14,7 @@
 ?>	
 <div>
 		<ul>
-			<li><a href="indexAventon.php"> Inicio</a></li>
+			<li><a href="index.php"> Inicio</a></li>
 			<li></li>
 			<li></li>
 			<li></li>
@@ -28,13 +28,13 @@
   <label style="color: black"> Apellido </label>
   <input type="text" id="apellido" name="apellido" class="caballo" placeholder="Apellido...">
   <label style="color: black"> Fecha Nacimiento </label>
-  <input type="date" id="nombreusuario" name="fecha" class="caballo" placeholder="Usuario...">
+  <input type="date" id="fecha" name="fecha" class="caballo" placeholder="Usuario...">
   <label style="color: black"> E-Mail </label>
   <input type="text" id="mail" name="mail" class="caballo"  placeholder="E-Mail...">
   <label style="color: black"> Contraseña </label>
-  <input type="password" id="contra" name="contra" class="caballo" placeholder="Contraseña...">
+  <input type="password" id="contrasena" name="contrasena" class="caballo" placeholder="Contraseña...">
   <label style="color: black"> Repetir contraseña </label>
-  <input type="password" id="contra2" name="contra2" class="caballo" placeholder="Repetir Contraseña...">
+  <input type="password" id="confirmar" name="confirmar" class="caballo" placeholder="Repetir Contraseña...">
   <div><input type="submit" class="botonRegistrarse" value="Registrarse"></div>
 </form>
 </div>
