@@ -1,3 +1,10 @@
+<html>
+<head>
+<link rel="stylesheet" href="estilos.css">
+<meta charset="utf-8"/>
+<script src="funcionesvalidacion.js"></script>
+</head>
+<body background="fondo.jpg">
 <div class="barralog">
 <script  type="text/javascript" src="funcionesvalidacion.js"> </script>
 	<?php 
@@ -20,5 +27,12 @@
 		</form>
 		<div class="bienve">
 			<div class="bienvenido">¡Bienvenido/a, <?php echo $_SESSION['nombre'] ?>!</div>
+	    </div>
 	<?php }?>
+</div>
+<div>
+	<ul>
+		<li><a href="index.php"> Inicio</a></li>
+		<li><a href="index.php"> ¿Quienes somos?</a></li>
+	</ul>
 </div>

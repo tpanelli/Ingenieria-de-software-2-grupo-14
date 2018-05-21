@@ -1,17 +1,4 @@
-<html>
-<head>
-<link rel="stylesheet" href="estilos.css">
-<meta charset="utf-8"/>
-<script src="funcionesvalidacion.js"></script>
-</head>
-<body background="fondo.jpg">
-<?php include "barra.php";   ?>
-<div>
-	<ul>
-		<li><a href="index.php"> Inicio</a></li>
-		<li><a href="index.php"> ¿Quienes somos?</a></li>
-	</ul>
-</div>
+<?php include "barra.php";?>
 <div class= "registrar2">
 <h1 style="color: Black;margin-left:110px; border-color: blue"> Busca tu Viaje!</h1> 
 <form action="modificarcontraseña.php" method="POST" class="input">
