@@ -2,11 +2,10 @@
 <head>
 <link rel="stylesheet" href="estilos.css">
 <meta charset="utf-8"/>
-<script src="funcionesvalidacion.js"></script>
 </head>
 <body background="fondo.jpg">
 <div class="barralog">
-<script  type="text/javascript" src="funcionesvalidacion.js"> </script>
+<script  type="text/javascript" src="funcionesValidacion.js"> </script>
 	<?php 
 	session_start();
 	include 'validacion.php';
@@ -31,8 +30,18 @@
 	<?php }?>
 </div>
 <div>
-	<ul>
-		<li><a href="index.php"> Inicio</a></li>
-		<li><a href="index.php"> ¿Quienes somos?</a></li>
-	</ul>
+<ul>
+  <li><a href="#home">Inicio</a></li>
+  <li><a href="#news">Quienes somos?</a></li>
+  <?php if($objeto->Logueado()){ ?>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Mis viajes</a>
+    <div class="dropdown-content">
+      <a href="#">Publicados</a>
+      <a href="#">Postulados</a>
+    </div>
+  </li>
+  <li><a href="#home">Mis vehiculos</a></li>
+  <?php } ?>
+</ul>
 </div>
