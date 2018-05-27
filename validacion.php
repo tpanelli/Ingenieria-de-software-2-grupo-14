@@ -20,6 +20,7 @@ class Acceso{
 					$_SESSION['mail']= $row['mail'];
 					$_SESSION['fechanac']= $row['fechanac'];
 					$_SESSION['contrasenia']= $row['contrasenia'];
+					$_SESSION['saldo']= $row['saldo'];
 			}
 		}
 		else {

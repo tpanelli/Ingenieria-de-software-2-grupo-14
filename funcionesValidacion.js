@@ -26,10 +26,6 @@ function validarContraseña(){
     var C1,C2;
 	C1 = document.getElementById("c1").value; 
 	C2 = document.getElementById("c2").value;
-	if (C1 == ""){
-		alert('Es obligatorio completar todos los campos!');
-		return false;
-	}
 	if (C1 != C2){
 		alert('Las contraseña es incorrecta');
 		return false;
@@ -38,39 +34,10 @@ function validarContraseña(){
 }
 
 function validarRegistro(){
-	var EmailValido = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/;
-	var contraValida = /(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
-	var vNombre,Apellido,Nombreusuario,Clave1,Clave2,Email,Fecha;
-	Nombre = document.getElementById("nombre").value;
-	Apellido = document.getElementById("apellido").value; 
-	Clave1 = document.getElementById("contra").value; 
-	Clave2 = document.getElementById("contra2").value;
-	Email = document.getElementById("mail").value;
-	if(Nombre == "" || Apellido == "" || Email == "" || Clave1 == "" || Clave2 == "" ){
-		alert('Es obligatorio completar todos los campos!');
-		return false;
-	}
-	if (!esAlfabetico(Nombre)){
-		alert('Nombre solo puede contener caracteres alfabeticos!');
-		return false;
-	}
-	if (!esAlfabetico(Apellido)){
-		alert('Apellido solo puede contener caracteres alfabeticos!');
-		return false;
-	}
+	var Clave1,Clave2;
+	Clave1 = document.getElementById("contrasena").value; 
+	Clave2 = document.getElementById("confirmar").value;
 
-	if(!EmailValido.test(Email)){
-		alert('E-mail no valido');
-		return false;
-	}
-	if(Clave1.length<6){
-		alert('La clave debe tener al menos 6 caracteres!');
-		return false;
-	}
-	if(!contraValida.test(Clave1)){
-		alert('La clave debe contener al menos una letra minuscula y mayuscula, y un caracter especial!');
-		return false;
-	}
 	if (Clave1 != Clave2){
 		alert('Las claves no coinciden');
 		return false;
@@ -80,49 +47,6 @@ function validarRegistro(){
 function goBack() {
     history.back();
 }
-
-function Confirmar($mensaje){
-	var ok = confirm($mensaje); 
-            if (ok) 
-            { 
-                return true; 
-            } 
-            else 
-            { 
-                return false; 
-            }
-}
-
-function validarAgregar(){
-	var patente = document.agregar.patente.value
-	var modelo = document.agregar.modelo.value;
-    var marca = document.agregar.marca.value;
-    var capacidad = document.agregar.capacidad.value;
-    var color = document.agregar.color.value;
-	var tipo = document.agregar.tipo.value;
-    if(modelo && marca && capacidad && color && tipo && patente){
-		return true;
-	}
-	else{
-		alert ('Faltan completar campos');
-		return false;
-	}
- }
- 
-  function validarEditar(){
-	var modelo = document.editar.modelo.value;
-    var marca = document.editar.marca.value;
-    var capacidad = document.editar.capacidad.value;
-    var color = document.editar.color.value;
-	var tipo = document.editar.tipo.value;
-    if(modelo && marca && capacidad && color && tipo){
-		return true;
-	}
-	else{
-		alert ('Faltan completar campos');
-		return false;
-	}
- }
 
 
 
