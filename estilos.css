@@ -48,11 +48,56 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.boton{
+	margin:1% 2% 1% 1%;
+	
+	
+}
+.perfil{
+	margin:2.5% 2% 1% 1%;
+	border-radius:12px;
+	width:30%;
+	background-color:#f17376;
+	opacity:0.9;
+	color: grey;
+}
+.datos{
+	float:left;
+	margin:1% 2% 2% 2%;
+	width:26%;
+	height:20%;
+	font-size:20px;
+	border:6px solid pink;
+	border-radius:8px;
+	padding-left:15px;
+	padding-top:15px;
+	background-color:black;
+	opacity:0.6;
+}
+.dato{
+	width: 23%;
+	margin-left: 8%;
+	font-size: 30px;
+	color: white;
+	text-align:left;
+	}
 
 
+.nombrePerfil{
+	width: 100%;
+	margin-left: 1%;
+	font-weight: 100;
+	font-size: 50px;
+	color: white;
+	text-align: center;
+	}
 .barralog {
 	background-color:white;
 	height:14%;
+}
+.b {
+	text-align:right;
+	margin-right:2%;
 }
 .login {
 	text-align:right;
