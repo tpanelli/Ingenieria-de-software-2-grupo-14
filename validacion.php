@@ -14,6 +14,7 @@ class Acceso{
 		$cant= mysqli_num_rows($result);
 		if($cant != 0){
 			if($row = mysqli_fetch_array($result)){
+				if($row['activo'] == 1){
 					session_start();
 					$_SESSION['nombre']= $row['nombre'];
 					$_SESSION['apellido']= $row['apellido'];
@@ -21,6 +22,10 @@ class Acceso{
 					$_SESSION['fechanac']= $row['fechanac'];
 					$_SESSION['contrasenia']= $row['contrasenia'];
 					$_SESSION['saldo']= $row['saldo'];
+				}
+				else {
+					throw new Exception('El usuario o la contraseña son incorrectos');
+				}
 			}
 		}
 		else {
