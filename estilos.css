@@ -422,3 +422,15 @@ label {
 	background-color:#f17376;
 	opacity:0.9;
 }
+
+.chico {
+    width:16%;
+    padding:10px 15px;
+    margin:5px 10px ;
+    box-sizing:border-box;
+    border:none;
+	border-radius:9px;
+    background-color:white;
+    color:black;
+	
+}
