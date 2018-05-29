@@ -404,3 +404,21 @@ label {
 	color: black;
 	margin-left:3%;
 }
+
+.imagenauto{
+	height: 130px;
+	border-radius: 8px;
+}
+
+.registrarauto{
+	margin-top: 2%;
+	margin-right: 5%;
+	padding: 10px;
+	color:white;
+	font-size: 25px;
+	border-radius:12px;
+	width:30%;
+	float:right;
+	background-color:#f17376;
+	opacity:0.9;
+}
