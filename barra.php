@@ -6,7 +6,7 @@
 <body background="fondo.jpg">
 <div class="barralog">
 <script  type="text/javascript" src="funcionesValidacion.js"> </script>
-<div class="IconoInicio"><img src="logoo.jpeg" style="width:95px;height:95px";></div>
+<a href="index.php"><div class="IconoInicio"><img src="logoo.jpeg" style="width:95px;height:95px";></div></a>
 	<?php 
 	session_start();
 	include 'validacion.php';
@@ -40,7 +40,8 @@
       <a href="#">Postulados</a>
     </div>
   </li>
-  <li><a href="#home">Mis vehiculos</a></li>
+  <li><a href="listarvehiculos.php">Mis vehiculos</a></li>
+  <li><a href="registrotarjeta.php">Registrar tarjeta</a></li>
   <?php } ?>
 </ul>
 </div>
