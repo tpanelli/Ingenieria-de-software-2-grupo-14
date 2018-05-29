@@ -1,4 +1,4 @@
-<html>
+ <html>
 <head>
 <link rel="stylesheet" href="estilos.css">
 <meta charset="utf-8"/>
@@ -6,12 +6,13 @@
 <body background="fondo.jpg">
 <div class="barralog">
 <script  type="text/javascript" src="funcionesValidacion.js"> </script>
+<div class="IconoInicio"><img src="logoo.jpeg" style="width:95px;height:95px";></div>
 	<?php 
 	session_start();
 	include 'validacion.php';
 	$objeto = new Acceso();
 	if(!$objeto->Logueado()){ ?>
-		<div class="IconoInicio"><img src="Logo.jpg" style="width:25%;height:100%";></div>
+		
 		<div class="login">
 			<div><a href="registro.php"><button class="botonIniciarSesion botonLogin"> Registrarse </button></a></div>
 			<div><a href="iniciar.php"><button class="botonIniciarSesion botonLogin"> Iniciar Sesion </button></a></div>
@@ -19,19 +20,17 @@
 	<?php 
 	} 
 	else{ ?>
-		<form method="post" action="cerrar.php" onclick="return Confirmar('¿Esta seguro que desea cerrar sesion?')">
-		<div class="login">
+		<div class="login">	
 			<div><a href="cerrar.php"><button class="botonIniciarSesion botonLogin"> Salir </button></a></div>
+			<div><a href="verPerfil.php"><button class="botonIniciarSesion botonLogin"><?php echo $_SESSION['nombre'],'','  ',' ',$_SESSION['apellido'] ?></button></a></div>
 		</div>
-		</form>
-		<div class="bienve">
-			<div class="bienvenido">¡Bienvenido/a, <?php echo $_SESSION['nombre'] ?>!</div>
-	    </div>
+
+		
 	<?php }?>
 </div>
 <div>
 <ul>
-  <li><a href="#home">Inicio</a></li>
+  <li><a href="index.php">Inicio</a></li>
   <li><a href="#news">Quienes somos?</a></li>
   <?php if($objeto->Logueado()){ ?>
   <li class="dropdown">
