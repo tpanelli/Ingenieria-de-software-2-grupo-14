@@ -12,7 +12,7 @@ if(!empty($ap) && !empty($n) && !empty($contr) && !empty($confir) && !empty($mai
 	if(preg_match("/^[a-zA-Z\-_]{1,50}$/", $ap) == 1) { 
 		if(preg_match("/^[a-zA-Z\-_]{1,50}$/", $n) == 1)  {
 			if(preg_match("/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/", $mail) == 1){
-				$fecha_actual=date("d-m-y");
+				$fecha_actual=date("y-m-d");
 				$diff = abs(strtotime($fecha_actual) - strtotime($fecha));
 				$years = floor($diff / (365*60*60*24));
 				if ($years>=18){
