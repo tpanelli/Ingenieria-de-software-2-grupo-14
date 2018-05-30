@@ -30,15 +30,26 @@
 		</table><table class="comentario"><tr>
 			<td>Comentario recibido<td>
 		</table>
+		</table><table class="comentario"><tr>
+			<td>Comentario recibido<td>
+		</table>
+		</table><table class="comentario"><tr>
+			<td>Comentario recibido<td>
+		</table>
+		</table><table class="comentario"><tr>
+			<td>Comentario recibido<td>
+		</table>
 </div>
-
 <div class="datos">
 	<div style="color:white; font-size:25px; margin-top: 5% ; margin-left:5%">
 	 E-Mail: <?php echo $row['mail']?><br><br>
-	 Nacimiento: <?php echo $row['fechanac']?>
+	 Nacimiento: <?php $fecha=$row['fechanac']; echo date("d/m/Y", strtotime($fecha));?>
 	 </div>
-	<div class="">
-			<div><a href="editarPerfil.php"><button class="botonEditarPerfil"> Editar Pefil </button></a></div>
+	 <div>
+			<div><a href="editarPerfil.php"><button class="botonEditarPerfil"> Editar perfil </button></a></div>
+	</div>
+	<div>
+			<div><a href="borrarperfil.php"><button class="botonEditarPerfil" onclick="return Confirmar('¿Esta seguro que desea borrar su cuenta?')"> Borrar cuenta </button></a></div>
 	</div>
 </div>
 <div class="datos">
@@ -48,7 +59,5 @@
 	 Pasajero:  ?
 	 </div>
 </div>
-	
-	
-
-	</html>
+</body>
+</html>

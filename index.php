@@ -1,7 +1,7 @@
 <?php include "barra.php";?>
 <div class= "registrar2">
 <h1 style="color: Black;margin-left:110px; border-color: blue"> Busca tu viaje!</h1> 
-<form method="POST" class="input">
+<form method="POST" class="input" action="pagerrores.php?errores=construccion">
   <label> Origen </label>
   <input type="text" id="contraseña1" class="caballo" name="password" placeholder="Origen...">
   <label style="color: black"> Destino </label>
@@ -31,7 +31,7 @@
 			<td class="nombre">Asientos: 2
 			<td>
 			<div class="precio">$150</div>
-			<input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input>
+			<a href="pagerrores.php?errores=construccion"><input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input></a>
 		</table>
 		<table class="viaje"><tr>
 			<td class="nombre">La Plata - Rosario<td>
@@ -39,7 +39,7 @@
 			<td class="nombre">11:30 pm<td>
 			<td class="nombre">Asientos: 4<td>
 			<div class="precio">$300</div>
-			<input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input>
+			<a href="pagerrores.php?errores=construccion"><input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input></a>
 		</table>
 		<table class="viaje"><tr>
 			<td class="nombre">Mar del Plata - Capital Federal<td>
@@ -47,7 +47,7 @@
 			<td class="nombre">8:00 am<td>
 			<td class="nombre">Asientos: 4<td>
 			<div class="precio">$350</div>
-			<input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input>
+			<a href="pagerrores.php?errores=construccion"><input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input></a>
 		</table>
 		<table class="viaje"><tr>
 			<td class="nombre">La Pampa - Cordoba<td>
@@ -55,7 +55,7 @@
 			<td class="nombre">1:00 pm<td>
 			<td class="nombre">Asientos: 3<td>
 			<div class="precio">$400</div>
-			<input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input>
+			<a href="pagerrores.php?errores=construccion"><input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input></a>
 		</table>
 </body>
 </html>

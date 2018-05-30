@@ -5,12 +5,17 @@
 	 mysqli_set_charset($link, "utf8");
 	 $mail=$_SESSION['mail'];
 	 $autoscorrectos= mysqli_query($link, "SELECT * FROM `vehiculo` WHERE mail='$mail'");
-  ?> <a href="formularioregistrarvehiculo.php"> <button class="registrarauto">Registrar nuevo</button></a> <?php
+     if (mysqli_num_rows($autoscorrectos) == 0){?>
+		 <div class="noSeEncontraronResultados">Usted no posee vehiculos registrados<br><br>
+			<a href="formularioregistrarvehiculo.php"><button class="botonLogin">Registrar nuevo</button></a>
+        </div>
+	 <?php }
+	 else {
 	 while ($autocorrecto = mysqli_fetch_array ($autoscorrectos)){
 		$patente = $autocorrecto['patente'];
 		$auto = mysqli_query($link, "SELECT * FROM `vehiculo` WHERE patente = '$patente'");
 		while ($datos = mysqli_fetch_array ($auto)){?>
-		<table class="viaje"><tr>
+		<table class="mostrarauto"><tr>
 			<td class="nombre"><img class="imagenauto" src= "<?php echo "mostrarImagen.php?patente=$patente";?>"><td>
 			<td class="nombre"> <?php echo $datos['marca'],' '; echo $datos['modelo'] ?><td>
 			<td class="nombre"><?php echo 'Patente: '.$datos['patente'],' '; echo '<br><br>Capacidad: '.$datos['capacidad'],' ';?><td>
@@ -21,6 +26,8 @@
 		<?php }
 	 } 
 ?>
+  <a href="formularioregistrarvehiculo.php"> <button class="registrarauto">Registrar nuevo</button></a> 
+	 <?php } ?>
 </body>
 </html>
 

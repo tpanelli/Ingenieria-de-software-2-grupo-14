@@ -14,13 +14,13 @@ include_once"archivoconexion.php";
 ?>
 <div class= "registrar">
 <h1 style="color: black;margin-left:50px"> Modifica tu contraseña</h1> 
-<form action="actualizarContraseña.php" method="POST"  class="input" enctype="multipart/form-data" onclick="return validarContra()" >
+<form action="actualizarContraseña.php" method="POST"  class="input" enctype="multipart/form-data" onsubmit="return validarContra()" >
   <label style="color: black"> Ingresa tu contraseña </label>
   <input type="password" title="La clave debe contener al menos una letra minuscula y mayuscula, y un caracter especial!" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"id="contraseniaIngresada" name="contraseniaIngresada" class="caballo" placeholder="Contraseña..." required/>
-  <label style="color: black"> Contraseña Nueva </label>
-  <input type="password" title="La clave debe contener al menos una letra minuscula y mayuscula, y un caracter especial!" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"id="contrasena" name="contrasena" class="caballo" placeholder="Contraseña..." required/>
+  <label style="color: black"> Contraseña nueva </label>
+  <input type="password" title="La clave debe contener al menos una letra minuscula y mayuscula, y un caracter especial!" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"id="contrasena" name="contrasena" class="caballo" placeholder="Contraseña nueva..." required/>
   <label style="color: black"> Repetir contraseña </label>
-  <input type="password" title="La clave debe contener al menos una letra minuscula y mayuscula, y un caracter especial!" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" id="confirmar" name="confirmar" class="caballo" placeholder="Repetir Contraseña..."required/>
+  <input type="password" title="La clave debe contener al menos una letra minuscula y mayuscula, y un caracter especial!" pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" id="confirmar" name="confirmar" class="caballo" placeholder="Repetir contraseña..."required/>
   <input value= "<?php echo $row['mail'] ?>" type="hidden" id="mail" name="mail">
   <input value= "<?php echo $row['contrasenia'] ?>" type="hidden" id="contraseniaOriginal" name="contraseniaOriginal"> 
   <div><input type="submit" class="botonRegistrarse" value="Aceptar"></div>

@@ -16,12 +16,14 @@ if ($datos =mysqli_fetch_array ($auto)){
 				<label style="color: black"> Marca </label>
 				<input type="text" class="caballo" name="marca" value='<?php echo $datos['marca']?>'  title="Debe contener solo letras y numeros" pattern="^[A-Za-z0-9\s]+$" required/> 
 				<label style="color: black"> Capacidad </label>
-				<input type="number" class="caballo" name="capacidad" value='<?php echo $datos['capacidad']?>' title="Debe contener numeros" pattern="^[0-9]+$" required/> 
+				<input type="number" class="caballo" name="capacidad" value='<?php echo $datos['capacidad']?>' title="Debe contener numeros" pattern="^[0-9]+$" min="1" max="60" required/> 
 				<label style="color: black"> Color </label>
 				<input type="text" class="caballo" name="color" value='<?php echo $datos['color']?>' title="Debe contener solo letras" pattern="^[a-zA-Z]+$" required/>
 				<label style="color: black"> Tipo </label>
-				<select class="caballo" name="tipo">
+				<select class="caballo" name="tipo" required/>
+				    <option value="" disabled selected>Tipo</option>
 					<?php
+					    $link = conectar();
 						$result=mysqli_query($link, 'SELECT * FROM tipovehiculo');
 							while ($row = mysqli_fetch_array ($result)){
 									?>
@@ -29,10 +31,9 @@ if ($datos =mysqli_fetch_array ($auto)){
 							<?php
 							}
 							?>
-				</select>
-				<label style="color: black"></label>
-				<img class="imagenauto" src= "<?php echo "mostrarImagen.php?patente=$patente";?>">
-				<label style="color: black"><br>Seleccionar imagen nueva (opcional) </label>
+			    </select>
+				<label style="color: black">Seleccionar imagen nueva (opcional)</label><br>
+				<img style="margin-left:4%" class="imagenauto" src= "<?php echo "mostrarImagen.php?patente=$patente";?>"><br>
 				<input type="file" class="caballo" name="imagen">
 				<input type="hidden" class="caballo" name="patente" value="<?php echo $datos['patente'] ?>"> 
 			<div>

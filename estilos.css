@@ -264,7 +264,7 @@ li.dropdown {
 }
 
 .registrar2{
-	margin:2.5% 2% 1% 1%;
+	margin:2% 2% 1% 1%;
 	border-radius:12px;
 	width:30%;
 	float:left;
@@ -340,7 +340,7 @@ li.dropdown {
     text-align: center;
     font-weight: 900;
     font-size: 30px;
-    border: 6px solid #C6ABFE;
+    border: 6px solid pink;
     border-radius: 8px;
     background-color: white;
     opacity: 0.8;

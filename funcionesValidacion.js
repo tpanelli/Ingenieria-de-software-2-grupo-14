@@ -27,7 +27,7 @@ function validarContraseña(){
 	C1 = document.getElementById("c1").value; 
 	C2 = document.getElementById("c2").value;
 	if (C1 != C2){
-		alert('Las contraseña es incorrecta');
+		alert('La contraseña es incorrecta');
 		return false;
 }
 
@@ -39,7 +39,7 @@ function validarRegistro(){
 	Clave2 = document.getElementById("confirmar").value;
 
 	if (Clave1 != Clave2){
-		alert('Las claves no coinciden');
+		alert('La clave no coinciden');
 		return false;
 	}
 	
@@ -52,7 +52,7 @@ function validarContra(){
 	ClaveNueva2 = document.getElementById("confirmar").value;
 
 	if (Clave1 != Clave2){
-		alert('Las claves es incorrecta');
+		alert('La clave original es incorrecta');
 		return false;
 	}
 	if (ClaveNueva != ClaveNueva2){

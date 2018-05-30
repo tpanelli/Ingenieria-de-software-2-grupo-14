@@ -43,6 +43,12 @@ switch($tipo){
 		case 'inicio':
 			$string = '*Error: El mail o la contraseña ingresados son incorrectos'; 
 		break;
+		case 'construccion':
+			$string = 'Esta funcionalidad esta en proceso de implementacion'; 
+		break;
+		case 'patente':
+			$string = '*Error: Usted ya registro un vehiculo con esa patente'; 
+		break;
 }
 ?>
 <div class="noSeEncontraronResultados">
