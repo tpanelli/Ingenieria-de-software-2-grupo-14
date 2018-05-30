@@ -376,8 +376,8 @@ li.dropdown {
     cursor: pointer;
 	padding:10px 10px 10px 10px;
 	margin-left: 5px;
-	margin-top: 15px;
-	margin-bottom: 0px;
+	margin-top: 5px;
+	margin-bottom: 3%;
 	margin-right: 10px;
 }
 .tabla{
@@ -432,5 +432,13 @@ label {
 	border-radius:9px;
     background-color:white;
     color:black;
-	
+}	
+.precio{
+	width: 25%;
+	margin-top: 3%;
+	margin-left: 20%;
+	margin-right: 10%;
+	font-size: 22px;
+	color: white;
+	text-align: right;
 }
