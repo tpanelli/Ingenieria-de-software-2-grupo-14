@@ -20,7 +20,7 @@
   <label style="color: black"> Apellido </label>
   <input type="text" title="Debe contener solo letras" pattern="^[a-zA-Z]+$"id="apellido" name="apellido" class="caballo" placeholder="Apellido..." required/>
   <label style="color: black"> Fecha Nacimiento </label>
-  <input type="date" id="fecha" name="fecha" class="caballo" placeholder="Usuario..." required/>
+  <input type="date" id="fecha" name="fecha" class="caballo" required/>
   <label style="color: black"> E-Mail </label>
   <input type="text" title="mail@ejemplo.com" id="mail" name="mail" class="caballo" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="E-Mail..."required/>
   <label style="color: black"> Contraseña </label>

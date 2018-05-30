@@ -7,15 +7,6 @@ $contr = $_POST['contrasena'];
 $confir = $_POST['confirmar'];
 $mail = $_POST['mail'];
 $fecha = $_POST['fecha'];
-$num1=$_POST['numero'];
-$num2=$_POST['numero2'];
-$num3=$_POST['numero3'];
-$num4=$_POST['numero4'];
-$pin=$_POST['pin'];
-$f1=$_POST['fecha1'];
-$f2=$_POST['fecha2'];
-$f=$f1."/".$f2;
-$num=$num1 . $num2 . $num3 . $num4;
 $com = mysqli_query($link, "SELECT * FROM `usuario` WHERE mail='$mail'");
 if(!empty($ap) && !empty($n) && !empty($contr) && !empty($confir) && !empty($mail) && !empty($fecha)){
 	if(preg_match("/^[a-zA-Z\-_]{1,50}$/", $ap) == 1) { 
@@ -36,14 +27,6 @@ if(!empty($ap) && !empty($n) && !empty($contr) && !empty($confir) && !empty($mai
 								$acceso -> Comparar($mail,$contr);
 								ini_set("session.use_trans_sid", "0");
 								$mail=$_SESSION['mail'];
-								if(!empty ($num1) && !empty ($num2) && !empty ($num3) && !empty ($num4) && !empty ($pin) && !empty ($f)){
-									$vara="INSERT INTO `usuario_tarjeta`(`mail`, `numerotarjeta`)
-									VALUES ('$mail', '$num')";
-									mysqli_query($link, $vara);
-									$vard="INSERT INTO `tarjeta`(`numero`,`pin` ,`fecha`)
-									VALUES ('$num', '$pin', '$f')";
-									mysqli_query($link, $vard);
-								}
 								header('Location: index.php');
 								mysqli_close($link);
 							} else {
