@@ -9,6 +9,7 @@
 <a href="index.php"><div class="IconoInicio"><img src="logoo.jpeg" style="width:95px;height:95px";></div></a>
 	<?php 
 	session_start();
+	include_once 'archivoconexion.php';
 	include 'validacion.php';
 	$objeto = new Acceso();
 	if(!$objeto->Logueado()){ ?>
@@ -21,7 +22,7 @@
 	} 
 	else{ ?>
 		<div class="login">	
-			<div><a href="cerrar.php"><button class="botonIniciarSesion botonLogin"> Salir </button></a></div>
+			<div><a href="cerrar.php"><button class="botonIniciarSesion botonLogin" onclick="return Confirmar('¿Esta seguro que desea cerrar sesion?')"> Salir </button></a></div>
 			<div><a href="verPerfil.php"><button class="botonIniciarSesion botonLogin"><?php echo $_SESSION['nombre'],'','  ',' ',$_SESSION['apellido'] ?></button></a></div>
 		</div>
 
