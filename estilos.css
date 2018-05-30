@@ -42,7 +42,7 @@ li.dropdown {
 	background-color:grey;
 	margin:2% 2% 6% 2%;
 	width:60%;
-	height:63%;
+	height:66%;
 	border:6px solid #f17376;
 	border-radius:8px;
 	padding-left:15px;
@@ -83,11 +83,10 @@ li.dropdown {
 	float:left;
 	margin:0% 5% 2% 2%;
 	width:26%;
-	height:24%;
+	height:26%;
 	font-size:20px;
 	border:6px solid pink;
 	border-radius:8px;
-
 	background-color:black;
 	opacity:0.6;
 }
@@ -125,43 +124,15 @@ li.dropdown {
 	
 	
 }
-.perfil{
-	margin:2.5% 2% 1% 1%;
-	border-radius:12px;
-	width:30%;
-	background-color:#f17376;
-	opacity:0.9;
-	color: grey;
-}
-.datos{
-	float:left;
-	margin:1% 2% 2% 2%;
-	width:26%;
-	height:20%;
-	font-size:20px;
-	border:6px solid pink;
-	border-radius:8px;
-	padding-left:15px;
-	padding-top:15px;
-	background-color:black;
-	opacity:0.6;
-}
-.dato{
-	width: 23%;
-	margin-left: 8%;
-	font-size: 30px;
-	color: white;
-	text-align:left;
-	}
 
 
 .nombrePerfil{
 	width: 100%;
-	margin-left: 1%;
+	margin-left: 16%;
 	font-weight: 100;
-	font-size: 50px;
+	font-size: 40px;
 	color: white;
-	text-align: center;
+	margin-top: 3%;
 	}
 .barralog {
 	background-color:white;
@@ -392,21 +363,6 @@ li.dropdown {
     cursor: pointer;
 }
 
-.comentario{
-	width: 700px;
-	height:60px;
-	margin:0% 2% 2% 28%;
-	padding:12px 20px;
-	border:6px solid white;
-	border-radius:8px;
-	float:left;
-	resize: none;
-	background-color:black;
-	color:white;
-	font-weight: 750;
-	opacity:0.6;
-	
-}
 
 .ParaComentar{
 	text-align: center;
