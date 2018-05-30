@@ -48,6 +48,17 @@ function goBack() {
     history.back();
 }
 
+function Confirmar($mensaje){
+	var ok = confirm($mensaje); 
+            if (ok) 
+            { 
+                return true; 
+            } 
+            else 
+            { 
+                return false; 
+            }
+}
 
 
 
