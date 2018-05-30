@@ -45,9 +45,9 @@ switch($tipo){
 		break;
 }
 ?>
-<div class="errorphp">
+<div class="noSeEncontraronResultados">
 	<?php echo $string ?><br><br>
-	<button class="botonenviar" onclick="goBack()">Volver al registro</button>
+	<button class="botonLogin" onclick="goBack()">Volver</button>
 </div>
 </body>
 </html>
