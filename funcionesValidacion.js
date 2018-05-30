@@ -44,6 +44,23 @@ function validarRegistro(){
 	}
 	
 }
+function validarContra(){
+	var Clave1,Clave2;
+	Clave1 = document.getElementById("contraseniaOriginal").value; 
+	Clave2 = document.getElementById("contraseniaIngresada").value; 
+	ClaveNueva = document.getElementById("contrasena").value;
+	ClaveNueva2 = document.getElementById("confirmar").value;
+
+	if (Clave1 != Clave2){
+		alert('Las claves es incorrecta');
+		return false;
+	}
+	if (ClaveNueva != ClaveNueva2){
+		alert('Las claves nuevas no coinciden');
+		return false;
+	}
+	
+}
 function goBack() {
     history.back();
 }
