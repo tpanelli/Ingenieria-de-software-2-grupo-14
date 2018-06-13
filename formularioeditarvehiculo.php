@@ -21,13 +21,12 @@ if ($datos =mysqli_fetch_array ($auto)){
 				<input type="text" class="caballo" name="color" value='<?php echo $datos['color']?>' title="Debe contener solo letras" pattern="^[a-zA-Z]+$" required/>
 				<label style="color: black"> Tipo </label>
 				<select class="caballo" name="tipo" required/>
-				    <option value="" disabled selected>Tipo</option>
 					<?php
 					    $link = conectar();
 						$result=mysqli_query($link, 'SELECT * FROM tipovehiculo');
 							while ($row = mysqli_fetch_array ($result)){
 									?>
-									<option value="<?php echo $row['tipo'] ?>"> <?php echo $row['tipo']; ?></option>
+									<option value="<?php echo $row['tipo'] ?>"<?php if($row['tipo']==$datos['nombretipo']) echo 'selected'?>> <?php echo $row['tipo']; ?></option>
 							<?php
 							}
 							?>
