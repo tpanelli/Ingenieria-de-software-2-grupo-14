@@ -518,3 +518,71 @@ label {
 	opacity:0.85;
 	border:2px solid pink;
 }
+
+.cuadradoViaje{
+	margin:2% 2% 0% 2%;
+	width:60%;
+	height:50%;
+	border:2px solid #f17376;
+	border-radius:8px;
+	padding-left:15px;
+	padding-top:15px;
+	background: rgba(255,255,255,0.7);	
+    float:left;
+	position:relative;
+}
+
+.cuadradoReservar{
+	margin:2% 2% 0% 2%;
+	width:29%;
+	height:28%;
+	border:2px solid #f17376;
+	border-radius:8px;
+	padding-left:15px;
+	padding-top:15px;
+	background: rgba(255,255,255,0.7);	
+    float:right;
+	position:relative;
+	font-size: 18px;
+}
+
+.conductorViaje{
+	margin-top: 2%;
+	width:96%;
+	height: 55%;
+	border:1px solid #f17376;
+	border-radius:8px;
+	padding-top:15px;
+	padding-left:15px;
+	background: rgba(220,220,220,0.7);	
+    float:left;
+	position:relative;
+}
+
+.precioReservar{
+	float:right;
+	font-size: 30px;
+	margin-right: 5%;
+}
+
+.asientosDisponibles{
+	margin-left: 27%;
+	margin-top: 5%;
+	font-size: 20px;
+}
+
+.botonPostularse {
+    background-color:black;
+    border:none;
+	border-radius: 4px;
+    color:white;
+    padding:10px 20px;
+    text-align:center;
+    text-decoration:none;
+    display:inline-block;
+    font-size:16px;
+    cursor:pointer;
+	margin-left: 34%;
+	margin-top: 2%;
+}
+
