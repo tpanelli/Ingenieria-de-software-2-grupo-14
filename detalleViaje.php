@@ -12,12 +12,13 @@ $usuario =  mysqli_fetch_array($usuario);
 <div class="cuadradoViaje"> 
 	 Origen: <?php echo $datos['ciudadOrigen'];?><br><br>
 	 Destino: <?php echo $datos ['ciudadDestino'];?><br><br>
-	 Salida: <?php $dia = $datos ['dia']; echo date("d/m/Y", strtotime($dia)), ' - ', substr($datos ['hora'], 0, -3);?><br><br>
-	
+	 Salida: <?php $dia = $datos ['dia']; echo date("d/m/Y", strtotime($dia)), ' - ', substr($datos ['hora'], 0, -3),' hs.';?><br><br>
+	 Duracion: <?php echo substr($datos ['duracion'], 0, -3),' hs.'; ?>
 	 <div class="conductorViaje">
 	  <?php echo $vehiculo ['marca'],' ', $vehiculo ['modelo']; ?> <br><br>
 	  <?php echo 'Color: ', $vehiculo['color']; ?> <br><br>
-	  Conductor: <a href='verPerfilAjeno.php?mail=<?php echo $usuario['mail']?>' > <?php echo $usuario['nombre'],' ', $usuario['apellido'] ?> </a>
+	  Conductor: <a href='verPerfilAjeno.php?mail=<?php echo $usuario['mail']?>' > <?php echo $usuario['nombre'],' ', $usuario['apellido'] ?> </a><br><br>
+	  <?php echo $datos['detalle']; ?>
 	 
 	 </div>
 </div>

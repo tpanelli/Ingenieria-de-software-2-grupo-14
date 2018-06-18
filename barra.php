@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="estilos.css">
 <meta charset="utf-8"/>
 </head>
-<body background="fondo.jpg" font="verdana">
+<body background="fondo.jpg">
 <div class="barralog">
 <script  type="text/javascript" src="funcionesValidacion.js"> </script>
 <a href="index.php"><div class="IconoInicio"><img src="logoo.jpeg" style="width:95px;height:95px";></div></a>
@@ -12,7 +12,8 @@
 	include_once 'archivoconexion.php';
 	include 'validacion.php';
 	$objeto = new Acceso();
-   $link = conectar();
+    $link = conectar();
+	mysqli_set_charset($link, "utf8");
    if(!$objeto->Logueado()){ ?>
 		<div class="login">
 			<div><a href="registro.php"><button class="botonIniciarSesion botonLogin"> Registrarse </button></a></div>
