@@ -3,9 +3,9 @@ $idviaje = $_GET['id'];
 $viaje = mysqli_query($link, "SELECT * FROM viaje WHERE idviaje = $idviaje");
 $datos = mysqli_fetch_array($viaje);
 $patente = $datos['patente'];
-$vehiculo = mysqli_query($link, "SELECT * FROM vehiculo WHERE patente = '$patente'");
+$mail = $datos ['mail'];
+$vehiculo = mysqli_query($link, "SELECT * FROM vehiculo WHERE patente = '$patente' and mail = '$mail'");
 $vehiculo = mysqli_fetch_array($vehiculo);
-$mail = $vehiculo ['mail'];
 $usuario =  mysqli_query($link, "SELECT * FROM usuario WHERE mail = '$mail'");
 $usuario =  mysqli_fetch_array($usuario);
 ?>

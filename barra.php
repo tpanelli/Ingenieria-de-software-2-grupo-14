@@ -40,7 +40,7 @@
   <li class="dropdown">
     <a href="pagerrores.php?errores=construccion" class="dropbtn">Mis viajes</a>
     <div class="dropdown-content">
-      <a href="pagerrores.php?errores=construccion">Publicados</a>
+      <a href="viajesPublicados.php">Publicados</a>
       <a href="pagerrores.php?errores=construccion">Postulados</a>
     </div>
   </li>
