@@ -41,7 +41,7 @@
     <a href="pagerrores.php?errores=construccion" class="dropbtn">Mis viajes</a>
     <div class="dropdown-content">
       <a href="viajesPublicados.php">Publicados</a>
-      <a href="pagerrores.php?errores=construccion">Postulados</a>
+      <a href="viajesPostulado.php">Postulados</a>
     </div>
   </li>
   <li><a href="listarvehiculos.php">Mis vehiculos</a></li>

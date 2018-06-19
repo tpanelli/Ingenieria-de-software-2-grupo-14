@@ -1,4 +1,4 @@
-<?php include "barra.php";
+<?php include "barra.php"; 
 $mail = $_SESSION['mail'];
 $viajes = mysqli_query($link, "SELECT * FROM viaje WHERE mail = '$mail'");
 while ($viaje = mysqli_fetch_array($viajes)){
@@ -14,5 +14,8 @@ while ($viaje = mysqli_fetch_array($viajes)){
 			<td class="nombre">Asientos: <?php include 'calcularAsientosDisponibles.php'; ?> <td>
 			<div class="precio"><?php echo '$', $viaje['costo']; ?></div>
 			<a href="detalleViaje.php?id='<?php echo $idviaje ?>'"><input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input></a>
-		</table>
+</table>
+<a href='verPostulantes.php?idviaje=<?php echo $idviaje ?>'><button class='botonViajePublicado'> Ver postulantes </button></a>
+<button class='botonViajePublicado'> Editar </button>
+<button class='botonViajePublicado'> Eliminar </button>
 <?php } ?>
