@@ -1,6 +1,10 @@
 <?php include "barra.php"; 
 $mail = $_SESSION['mail'];
 $postulaciones = mysqli_query($link, "SELECT * FROM viaje_usuario WHERE mail = '$mail'");
+if (mysqli_num_rows($postulaciones) == 0) { ?>
+	 <div class="noSeEncontraronResultados">Usted no se ha postulado a ningun viaje<br><br>
+	 <?php
+} else {
 while ($postulacion = mysqli_fetch_array($postulaciones)){
 			$idviaje = $postulacion ['idviaje'];
 			$viaje = mysqli_query($link, "SELECT * FROM viaje WHERE idviaje = '$idviaje'");
@@ -27,4 +31,5 @@ while ($postulacion = mysqli_fetch_array($postulaciones)){
 													}?> 
 </button>
 <button class='botonViajePublicado'> Salir del viaje </button>
-<?php } ?>
+<?php } 
+}?>
