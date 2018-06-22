@@ -25,5 +25,10 @@ $usuario =  mysqli_fetch_array($usuario);
 <div class="cuadradoReservar">
 	Precio: <div class='precioReservar'>$<?php echo $datos['costo']; ?></div><br><br><hr/>
 	<div class='asientosDisponibles'><?php include 'calcularAsientosDisponibles.php'; ?> asientos disponibles</div><br><hr/>
-	<button class='botonPostularse'> Postularse </button>
+	<br>
+	<form action="postularse.php"method="post">
+	<input name="idviaje" value=" <?php echo $idviaje;?> " type="hidden"></input> 
+	<input name="mail" value=" <?php echo $_SESSION['mail'];?> " type="hidden"></input>  
+	<input name="eliminar" value="Postularse" type="submit" class="botonEliminar" onclick="return Eliminar()"></input>
+	</form>
 </div>
