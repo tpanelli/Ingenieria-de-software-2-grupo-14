@@ -5,7 +5,7 @@
    echo $idviaje;
    echo $mail;
    echo 'dasdasdasdasd';
- // mysqli_query($link,"INSERT INTO `viaje_usuario`(`idpasajero`, `idviaje`, `mail`, `aceptado`) VALUES (NULL,'$idviaje','$mail',NULL)");
+   mysqli_query($link,"INSERT INTO `viaje_usuario`(`idpasajero`, `idviaje`, `mail`) VALUES (NULL,'$idviaje','$mail')");
 
 
 
