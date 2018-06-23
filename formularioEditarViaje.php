@@ -40,11 +40,12 @@ $usuario =  mysqli_fetch_array($usuario);
 			    </select><br><br>
 	 Salida: <input type="date" name="dia" value='<?php echo $datos['dia']?>' required/></input> 
 	 <input type="time" name="hora" value='<?php echo $datos ['hora'];?>' required/></input><br><br>
-	 Duracion: <input type="time" name="duracion" value='<?php echo $datos ['duracion']; ?>'></input>
+	 Duracion: <input type="time" name="duracion" value='<?php echo $datos ['duracion']; ?>'></input><br><br>
+	 Costo por asiento: <input type="number" name="costo" value='<?php echo $datos['costo']?>' required/></input> 
 	 <div class="conductorViaje">
 	  <?php echo $vehiculo ['marca'],' ', $vehiculo ['modelo']; ?> <br><br>
 	  <?php echo 'Color: ', $vehiculo['color']; ?> <br><br>
-	  Conductor: <a href='verPerfilAjeno.php?mail=<?php echo $usuario['mail']?>' > <?php echo $usuario['nombre'],' ', $usuario['apellido'] ?> </a><br><br>
+	  Conductor: <a href='verPerfil.php'> <?php echo $usuario['nombre'],' ', $usuario['apellido'] ?> </a><br><br>
 	  <textarea name="detalle" style="resize:none;height:80px;width:500px;" required/><?php echo $datos['detalle']; ?></textarea>
 	 </div>
 	 <input type="hidden" name="idviaje" value="<?php echo $idviaje ?>"> </input>

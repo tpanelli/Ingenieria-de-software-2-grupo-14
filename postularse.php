@@ -1,4 +1,4 @@
-<? include 'archivoconexion.php';
+<?php include 'archivoconexion.php';
    $link = conectar();
    $idviaje = $_POST['idviaje'];
    $mail= $_POST['mail'];

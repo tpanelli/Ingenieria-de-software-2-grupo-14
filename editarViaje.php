@@ -9,7 +9,8 @@ $dia = $_POST['dia'];
 $hora = $_POST['hora'];
 $duracion = $_POST ['duracion'];
 $detalle = $_POST ['detalle'];
-$consulta = "UPDATE viaje SET ciudadOrigen='$origen', ciudadDestino='$destino', dia='$dia', hora='$hora', duracion='$duracion', detalle='$detalle' WHERE idviaje = $idviaje";
+$costo = $_POST['costo'];
+$consulta = "UPDATE viaje SET ciudadOrigen='$origen', ciudadDestino='$destino', dia='$dia', hora='$hora', duracion='$duracion', detalle='$detalle', costo=$costo WHERE idviaje = $idviaje";
 mysqli_query ($link, $consulta);
 header("Location: viajesPublicados.php");
 ?>
