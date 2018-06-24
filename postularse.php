@@ -1,13 +1,32 @@
-<? include 'archivoconexion.php';
+<?php include_once 'archivoconexion.php';
    $link = conectar();
-   $idviaje = $_POST['idviaje'];
-   $mail= $_POST['mail'];
-   echo $idviaje;
-   echo $mail;
-   echo 'dasdasdasdasd';
- // mysqli_query($link,"INSERT INTO `viaje_usuario`(`idpasajero`, `idviaje`, `mail`, `aceptado`) VALUES (NULL,'$idviaje','$mail',NULL)");
-
-
-
-
-?>
+    $mail=  $_POST['mail'];
+    $idviaje=  $_POST['idviaje'];
+	$disponible = $_POST['disponibles'];
+   $postulaciones = mysqli_query($link, "SELECT * FROM viaje_usuario WHERE mail = '$mail' and idviaje = '$idviaje'");
+   $pagos = mysqli_query($link, "SELECT * FROM pago WHERE mail = '$mail' AND realizado = '0'");
+   $calificaciones = mysqli_query($link, "SELECT * FROM calificaciones WHERE mailvoto = '$mail' AND realizado = '0'");
+  echo $cantCalificaciones = mysqli_num_rows($calificaciones);  
+   $cant = mysqli_num_rows($postulaciones);  
+   $cantDeudas = mysqli_num_rows($pagos);  
+   if($cantCalificaciones == 0){
+   if ($disponible != 0){
+		if ($cantDeudas == 0){
+				if ($cant == 0){
+						mysqli_query($link,"INSERT INTO `viaje_usuario`(`idpasajero`, `idviaje`, `mail`) VALUES (NULL, '$idviaje' , '$mail')");
+						header ('location:viajesPostulado.php');
+				}else {
+						header('location: pagerrores.php?errores=yaPostulado');
+				}
+				}else{
+						header('location: pagerrores.php?errores=deuda');
+				}
+				}else{
+						header('location: pagerrores.php?errores=noDisponible'); 
+	            } 	
+				}else{
+						header('location: pagerrores.php?errores=debesCali'); 
+	            } 
+				
+	
+	?>
