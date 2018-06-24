@@ -278,6 +278,7 @@ li.dropdown {
 	float:left;
 	background-color:#f17376;
 	opacity:0.9;
+	margin-top: 0.5%;
 }
 .registrar {
 	margin:10px 35%;
@@ -602,4 +603,32 @@ label {
 	float:left;
 }
 
+.postular{
+	margin-top: 2%;
+	border-radius:12px;
+	width:90%;
+	float:left;
+	background-color:#f17376;
+	opacity:0.9;
+}
 
+table{
+    width:100%;
+	border-radius:12px;
+}
+table, th, td {
+    border-collapse: collapse;
+    text-align: left;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+table#t01 tr:nth-child {
+    background-color: #f17376;
+	margin-top: 0%;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
