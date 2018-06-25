@@ -8,8 +8,14 @@ $vehiculo = mysqli_query($link, "SELECT * FROM vehiculo WHERE patente = '$patent
 $vehiculo = mysqli_fetch_array($vehiculo);
 $usuario =  mysqli_query($link, "SELECT * FROM usuario WHERE mail = '$mail'");
 $usuario =  mysqli_fetch_array($usuario);
+date_default_timezone_set('America/Argentina/Buenos_Aires');
 $fecha_actual = date("y-m-d");
-if(strtotime($fecha_actual) < strtotime($datos['dia'])){
+$hora_actual = strtotime(date ("H:i:s"));
+$horaviaje=$datos['hora'];
+$duracion= $datos['duracion'];
+$duracion = strtotime($duracion) - strtotime ('today');
+$horaviaje = strtotime('+'.$duracion.' seconds', strtotime($horaviaje));
+if((strtotime($fecha_actual) <= strtotime($datos['dia']))&&($hora_actual < $horaviaje)){
 ?>
 <div class="cuadradoViaje"> 
 	 Origen: <?php echo $datos['ciudadOrigen'];?><br><br>
@@ -46,7 +52,7 @@ if(strtotime($fecha_actual) < strtotime($datos['dia'])){
 	 <div class="conductorViaje">
 	  <?php echo $vehiculo ['marca'],' ', $vehiculo ['modelo']; ?> <br><br>
 	  <?php echo 'Color: ', $vehiculo['color']; ?> <br><br>
-	  Conductor: <a href='verPerfilAjeno.php?mail=<?php echo $usuario['mail']?>' > <?php echo $usuario['nombre'],' ', $usuario['apellido'] ?> </a><br><br>
+	  Conductor: <a href='verPerfil.php?mail=<?php echo $usuario['mail']?>' > <?php echo $usuario['nombre'],' ', $usuario['apellido'] ?> </a><br><br>
 	  <?php echo $datos['detalle']; ?>
 	 
 	 </div>
@@ -72,21 +78,23 @@ if(strtotime($fecha_actual) < strtotime($datos['dia'])){
 	 <div class="conductorViaje">
 	  <?php echo $vehiculo ['marca'],' ', $vehiculo ['modelo']; ?> <br><br>
 	  <?php echo 'Color: ', $vehiculo['color']; ?> <br><br>
-	  Conductor: <a href='verPerfilAjeno.php?mail=<?php echo $usuario['mail']?>' > <?php echo $usuario['nombre'],' ', $usuario['apellido'] ?> </a><br><br>
+	  Conductor: <a href='verPerfil.php?mail=<?php echo $usuario['mail']?>' > <?php echo $usuario['nombre'],' ', $usuario['apellido'] ?> </a><br><br>
 	  <?php echo $datos['detalle']; ?>
 	 
 	 </div>
 </div>
 <br>
-<div style="margin:32% 1% 0% 35%;font-size:30px">Califica a los pasajeros!</div>
 <?php 
-	$pasajeros = mysqli_query ($link, "SELECT * FROM viaje_usuario WHERE idviaje = $idviaje");
-	while($usuario= mysqli_fetch_array($pasajeros)){
-		$p = mysqli_query ($link, "SELECT * FROM usuario WHERE mail =  '$usuario[mail]' ");
-		$pasajero= mysqli_fetch_array($p);
+	$pasajeros = mysqli_query ($link, "SELECT * FROM viaje_usuario WHERE idviaje = '$idviaje' and aceptado = '1' ");
+	while($pasajero= mysqli_fetch_array($pasajeros)){
+		$calificaciones = mysqli_query ($link, "SELECT * FROM calificaciones WHERE mailvotado = '$pasajero[mail]' and idviaje='$idviaje' and realizado = '0' ");
+		$calificacion= mysqli_fetch_array($calificaciones);
+		$u = mysqli_query ($link, "SELECT * FROM usuario WHERE mail = '$calificacion[mailvotado]' ");
+		$us= mysqli_fetch_array($u);
+		if(mysqli_num_rows($u)!= 0){
 ?>
 <div class="puntuar">
-	<div style="margin:2% 1% 6% 12%;font-size:30px">Califica a <a href='verPerfil.php?mail=<?php echo $pasajero['mail']?>' > <?php echo $pasajero['nombre'],' ',$pasajero['apellido']?> </a></div>
+	<div style="margin:2% 1% 6% 12%;font-size:30px">Califica a <a href='verPerfil.php?mail=<?php echo $us['mail']?>' > <?php echo $us['nombre'],' ',$us['apellido']?> </a></div>
 	<form action="enviarCalificacion.php"method="post">
 	<input name="idviaje" value="<?php echo $_GET['id'];?>" type="hidden"></input> 
 	<input name="mail" value="<?php echo $_SESSION['mail'];?>" type="hidden"></input> 
@@ -99,4 +107,5 @@ if(strtotime($fecha_actual) < strtotime($datos['dia'])){
 </div>
 
 <?php }
+	}
 } ?>
