@@ -31,7 +31,7 @@ while ($viaje = mysqli_fetch_array($viajes)){
 			$vehiculo = mysqli_query($link, "SELECT * FROM vehiculo WHERE patente = '$patente'");
 			$vehiculo = mysqli_fetch_array($vehiculo);
 ?>
-<table class="viaje"><tr>
+<table style="float:right; margin-right:4.5%; margin-bottom:1%" class="viaje"><tr>
 			<?php $idviaje = $viaje['idviaje']; ?>
 			<td class="nombre"><?php echo $viaje ['ciudadOrigen'], ' - ', $viaje ['ciudadDestino'];?><td>
 			<td class="nombre"> <?php $dia = $viaje ['dia']; echo date("d/m/Y", strtotime($dia));?><td>
