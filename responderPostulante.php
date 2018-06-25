@@ -4,7 +4,7 @@ $link = conectar();
 $id=$_GET['id'];
 $idviaje=$_GET['idviaje'];
 $mail=$_GET['mail'];
-if($id=3){
+if($id==3){
 	mysqli_query($link,"DELETE FROM viaje_usuario WHERE mail='$mail'");
 	header("location: verPostulantes.php?idviaje=$idviaje");
 }else{
