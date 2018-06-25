@@ -14,6 +14,7 @@ while ($postulacion = mysqli_fetch_array($postulaciones)){
 			$vehiculo = mysqli_query($link, "SELECT * FROM vehiculo WHERE patente = '$patente' and mail = '$mailConductor'");
 			$vehiculo = mysqli_fetch_array($vehiculo);
 ?>
+<div style="margin: 2% 32% 2% 28%"class="noSeEncontraronResultados" >Viajes postulados</div>
 <table id="t01" class="viaje"><tr>
 			<?php $idviaje = $viaje['idviaje']; ?>
 			<td class="nombre"><?php echo $viaje ['ciudadOrigen'], ' - ', $viaje ['ciudadDestino'];?><td>

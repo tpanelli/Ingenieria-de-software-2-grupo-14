@@ -37,8 +37,10 @@ if((strtotime($fecha_actual) <= strtotime($datos['dia']))&&($hora_actual < $hora
 	<form action="postularse.php"method="post">
 	<input name="idviaje" value="<?php echo $_GET['id'];?>" type="hidden"></input> 
 	<input name="mail" value="<?php echo $_SESSION['mail'];?>" type="hidden"></input>
-	<input name="disponibles" value="<?php echo $disponibles?>" type="hidden"></input>  
-	<input name="eliminar" value="Postularse" type="submit" class="botonEliminar" onclick="return Eliminar()"></input>
+	<input name="disponibles" value="<?php echo $disponibles?>" type="hidden"></input> 
+		<?php if ( $mail != $_SESSION['mail']){ ?>
+	<input name="eliminar" value="Postularse" type="submit" class="botonPostularse" onclick="return Eliminar()"></input>
+		<?php } ?>
 	</form>
 </div>
 <?php
@@ -70,7 +72,7 @@ if((strtotime($fecha_actual) <= strtotime($datos['dia']))&&($hora_actual < $hora
 	</form>
 </div>
 <?php } else { ?>
-<div class="cuadradoViaje"> 
+<div style="width:28%;height:55%;"class="cuadradoViaje"> 
 	 Origen: <?php echo $datos['ciudadOrigen'];?><br><br>
 	 Destino: <?php echo $datos ['ciudadDestino'];?><br><br>
 	 Salida: <?php $dia = $datos ['dia']; echo date("d/m/Y", strtotime($dia)), ' - ', substr($datos ['hora'], 0, -3),' hs.';?><br><br>
@@ -93,7 +95,7 @@ if((strtotime($fecha_actual) <= strtotime($datos['dia']))&&($hora_actual < $hora
 		$us= mysqli_fetch_array($u);
 		if(mysqli_num_rows($u)!= 0){
 ?>
-<div class="puntuar">
+<div style="margin-left:3%; margin-top:1%"class="puntuar">
 	<div style="margin:2% 1% 6% 12%;font-size:30px">Califica a <a href='verPerfil.php?mail=<?php echo $us['mail']?>' > <?php echo $us['nombre'],' ',$us['apellido']?> </a></div>
 	<form action="enviarCalificacion.php"method="post">
 	<input name="idviaje" value="<?php echo $_GET['id'];?>" type="hidden"></input> 
