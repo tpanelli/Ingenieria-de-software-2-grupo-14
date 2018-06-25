@@ -49,6 +49,18 @@ switch($tipo){
 		case 'patente':
 			$string = '*Error: Usted ya registro un vehiculo con esa patente'; 
 		break;
+		case 'yaPostulado':
+			$string = '*Error: Usted ya esta postulado en este viaje'; 		
+		break;
+		case 'deuda':
+			$string = '*Error: Usted debe pagos'; 
+		break;		
+		case 'noDisponible':
+			$string = '*Error:	El vehiculo ya esta completo '; 
+		break;		
+		case 'debesCali':
+			$string = '*Error:	Debes calificaciones '; 
+		break;
 }
 ?>
 <div class="noSeEncontraronResultados">
