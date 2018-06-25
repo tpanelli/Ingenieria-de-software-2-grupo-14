@@ -1,4 +1,4 @@
-<form name="publicar" action="publicarViaje.php" method="post" class="input" enctype="multipart/form-data"> 
+<form name="publicar" action="publicarViajePeriodico.php" method="post" class="input" enctype="multipart/form-data"> 
 <div class="cuadradoViaje"> 
 	 Origen: <select name="origen" required/>
 							<option value="" disabled selected>Origen</option>
