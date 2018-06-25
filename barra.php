@@ -26,7 +26,7 @@
          $row = mysqli_fetch_array($result);?>
 		<div class="login">	
 			<div><a href="cerrar.php"><button class="botonIniciarSesion botonLogin" onclick="return Confirmar('¿Esta seguro que desea cerrar sesion?')"> Salir </button></a></div>
-			<div><a href="verPerfil.php"><button class="botonIniciarSesion botonLogin"><?php echo $row['nombre'],'','  ',' ',$row['apellido'] ?></button></a></div>
+			<div><a href='verPerfil.php?mail=<?php echo $_SESSION['mail']?>'><button class="botonIniciarSesion botonLogin"><?php echo $row['nombre'],'','  ',' ',$row['apellido'] ?></button></a></div>
 		</div>
 
 		
@@ -46,7 +46,6 @@
   </li>
   <li><a href="listarvehiculos.php">Mis vehiculos</a></li>
   <li><a href="registrotarjeta.php">Registrar tarjeta</a></li>
-  <li><a href="elegirTipoViaje.php">Publicar viaje</a></li>
   <?php } ?>
 </ul>
 </div>
