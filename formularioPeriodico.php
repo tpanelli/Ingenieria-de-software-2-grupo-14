@@ -22,17 +22,17 @@
 							}
 							?>
 			    </select><br><br>
-	 Primer viaje: <input type="date" name="dia" required/></input> 
-	 Ultimo viaje: <input type="date" name="dia" required/></input> 
+	 Primer viaje: <input type="date" name="primerViaje" required/></input> 
+	 Ultimo viaje: <input type="date" name="ultimoViaje" required/></input> 
 	 Hora de salida: <input type="time" name="hora" required/></input><br><br>
 	 Duracion: <input type="time" name="duracion" required/></input> <br><br>
-	  Dias: <input type="checkbox" name="vehicle" value=""> Lunes</input>
-	 <input type="checkbox" name="vehicle" value=""> Martes</input>
-	 <input type="checkbox" name="vehicle" value=""> Miercoles</input>
-	 <input type="checkbox" name="vehicle" value=""> Jueves</input>
-	 <input type="checkbox" name="vehicle" value=""> Viernes</input>
-	 <input type="checkbox" name="vehicle" value=""> Sabado</input>
-	 <input type="checkbox" name="vehicle" value=""> Domingo</input><br><br>
+	  Dias: <input type="checkbox" name="dias[]" value="Monday"> Lunes</input>
+	 <input type="checkbox" name="dias[]" value="Tuesday"> Martes</input>
+	 <input type="checkbox" name="dias[]" value="Wednesday"> Miercoles</input>
+	 <input type="checkbox" name="dias[]" value="Thursday"> Jueves</input>
+	 <input type="checkbox" name="dias[]" value="Friday"> Viernes</input>
+	 <input type="checkbox" name="dias[]" value="Saturday"> Sabado</input>
+	 <input type="checkbox" name="dias[]" value="Sunday"> Domingo</input><br><br>
 	 Tipo: Periodico <br><br> 
 	Costo por asiento: <input type="number" name="costo" required/></input> 
 	 <div class="conductorViaje">
