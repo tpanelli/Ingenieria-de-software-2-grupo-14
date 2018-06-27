@@ -47,6 +47,7 @@
   <li><a href="listarvehiculos.php">Mis vehiculos</a></li>
   <li><a href="registrotarjeta.php">Registrar tarjeta</a></li>
   <li><a href="elegirTipoViaje.php">Publicar viaje</a></li>
+  <li><a href="pagarDeuda.php">Paga tus deudas</a></li>
   <?php } ?>
 </ul>
 </div>

@@ -61,6 +61,9 @@ switch($tipo){
 		case 'debesCali':
 			$string = '*Error:	Debes calificaciones '; 
 		break;
+		case 'pagos':
+			$string = 'Usted no tiene deudas pendientes'; 
+		break;
 }
 ?>
 <div class="noSeEncontraronResultados">
