@@ -9,6 +9,5 @@ if (mysqli_num_rows($viajes) == 0) { ?>
 	<div style="margin_bottom:22%"class="noSeEncontraronResultados"> Que viajes deseas ver?<br><br>
 				<a href="viajesPendientes.php"><button class="botonLogin">Pendientes</button></a> 
 				<a href="viajesFinalizados.php"><button class="botonLogin">Finalizados</button></a>
-				<a href="calificacionesPendientes.php">¿Debes calificaciones?</a> 
 	</div>
 <?php } ?>

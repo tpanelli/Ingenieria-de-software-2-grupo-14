@@ -48,6 +48,7 @@
   <li><a href="registrotarjeta.php">Registrar tarjeta</a></li>
   <li><a href="elegirTipoViaje.php">Publicar viaje</a></li>
   <li><a href="pagarDeuda.php">Paga tus deudas</a></li>
+  <li><a href="calificacionesPendientes.php">Calificaciones pendientes</a></li>
   <?php } ?>
 </ul>
 </div>

@@ -52,19 +52,24 @@ if($datos['realizado'] == 0){
 	 
 	 </div>
 </div>
+<?php 
+	$calificacionPendiente = mysqli_query($link, "SELECT * FROM calificaciones WHERE idviaje = '$idviaje' and mailvoto = '$_SESSION[mail]' and realizado = '0'");
+	if (mysqli_num_rows($calificacionPendiente) > 0){
+?>
 <div class="cuadradoReservar">
 	<div style="margin:2% 1% 6% 15%;font-size:30px">Califica al conductor!</div>
 	<form action="enviarCalificacion.php"method="post">
 	<input name="idviaje" value="<?php echo $_GET['id'];?>" type="hidden"></input> 
 	<input name="mail" value="<?php echo $_SESSION['mail'];?>" type="hidden"></input> 
-	<input style="margin:0% 0% 7% 25%" type="radio" name="puntuacion" value="male"required/> Positivo
-    <input type="radio" name="puntuacion" value="female"required/>Negativo<br>
+	<input style="margin:0% 0% 7% 25%" type="radio" name="puntuacion" value="1"required/> Positivo
+    <input type="radio" name="puntuacion" value="0"required/>Negativo<br>
 	<label style="margin-left:30%">Deja tu comentario</label>
 	<input style="margin-left:25%" type="text-area" name="comentario"  required/>
 	<input style="margin:2% 5% 7% 37% "name="eliminar" value="Enviar" type="submit" class="botonEliminar" onclick="return Eliminar()"></input>
 	</form>
 </div>
-<?php } else { ?>
+<?php }
+} else { ?>
 <div style="width:28%;height:55%;"class="cuadradoViaje"> 
 	 Origen: <?php echo $datos['ciudadOrigen'];?><br><br>
 	 Destino: <?php echo $datos ['ciudadDestino'];?><br><br>
@@ -93,8 +98,8 @@ if($datos['realizado'] == 0){
 	<form action="enviarCalificacion.php"method="post">
 	<input name="idviaje" value="<?php echo $_GET['id'];?>" type="hidden"></input> 
 	<input name="mail" value="<?php echo $_SESSION['mail'];?>" type="hidden"></input> 
-	<input style="margin:0% 0% 7% 25%" type="radio" name="puntuacion" value="male"required/> Positivo
-    <input type="radio" name="puntuacion" value="female"required/>Negativo<br>
+	<input style="margin:0% 0% 7% 25%" type="radio" name="puntuacion" value="1"required/> Positivo
+    <input type="radio" name="puntuacion" value="0"required/>Negativo<br>
 	<label style="margin-left:30%">Deja tu comentario</label>
 	<input style="margin-left:25%" type="text-area" name="comentario"  required/>
 	<input style="margin:2% 5% 7% 37% "name="eliminar" value="Enviar" type="submit" class="botonEliminar" onclick="return Eliminar()"></input>
