@@ -8,14 +8,7 @@ $vehiculo = mysqli_query($link, "SELECT * FROM vehiculo WHERE patente = '$patent
 $vehiculo = mysqli_fetch_array($vehiculo);
 $usuario =  mysqli_query($link, "SELECT * FROM usuario WHERE mail = '$mail'");
 $usuario =  mysqli_fetch_array($usuario);
-date_default_timezone_set('America/Argentina/Buenos_Aires');
-$fecha_actual = date("y-m-d");
-$hora_actual = strtotime(date ("H:i:s"));
-$horaviaje=$datos['hora'];
-$duracion= $datos['duracion'];
-$duracion = strtotime($duracion) - strtotime ('today');
-$horaviaje = strtotime('+'.$duracion.' seconds', strtotime($horaviaje));
-if((strtotime($fecha_actual) <= strtotime($datos['dia']))&&($hora_actual < $horaviaje)){
+if($datos['realizado'] == 0){
 ?>
 <div class="cuadradoViaje"> 
 	 Origen: <?php echo $datos['ciudadOrigen'];?><br><br>

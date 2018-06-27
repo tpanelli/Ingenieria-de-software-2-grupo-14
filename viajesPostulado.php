@@ -24,7 +24,7 @@ while ($postulacion = mysqli_fetch_array($postulaciones)){
 			<td class="nombre"><?php echo substr($viaje ['hora'], 0, -3) ;?><td>
 			<td class="nombre">Asientos: <?php include 'calcularAsientosDisponibles.php'; ?> <td>
 			<div class="precio"><?php echo '$', $viaje['costo']; ?></div>
-			<a href="detalleViaje.php?id='<?php echo $idviaje ?>'"><input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input></a>
+			<a href="detalleViaje.php?id=<?php echo $idviaje ?>"><input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input></a>
 </table>
 <button class='botonViajePublicado'> Estado: <?php $aceptado = $postulacion ['aceptado'];
 													switch($aceptado){

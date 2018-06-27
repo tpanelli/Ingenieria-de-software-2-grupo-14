@@ -2,7 +2,7 @@
 include "barra.php";
 $mail = $_SESSION['mail'];
 $fecha_actual = date("y-m-d");
-$viajesPendientes = mysqli_query($link, "SELECT * FROM viaje WHERE mail = '$mail' and dia > '$fecha_actual'");
+$viajesPendientes = mysqli_query($link, "SELECT * FROM viaje WHERE mail = '$mail' and realizado = '0'");
 ?>
  <div style="margin: 2% 32% 2% 28%"class="noSeEncontraronResultados" >Viajes pendientes</div>
 <?php
