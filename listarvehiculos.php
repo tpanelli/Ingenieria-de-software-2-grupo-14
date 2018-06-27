@@ -4,7 +4,7 @@
 	 $link = conectar();
 	 mysqli_set_charset($link, "utf8");
 	 $mail=$_SESSION['mail'];
-	 $autoscorrectos= mysqli_query($link, "SELECT * FROM `vehiculo` WHERE mail='$mail'");
+	 $autoscorrectos= mysqli_query($link, "SELECT * FROM `vehiculo` WHERE mail='$mail' and activo = '1'");
      if (mysqli_num_rows($autoscorrectos) == 0){?>
 		 <div class="noSeEncontraronResultados">Usted no posee vehiculos registrados<br><br>
 			<a href="formularioregistrarvehiculo.php"><button class="botonLogin">Registrar nuevo</button></a>

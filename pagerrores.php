@@ -64,6 +64,9 @@ switch($tipo){
 		case 'pagos':
 			$string = 'Usted no tiene deudas pendientes'; 
 		break;
+		case 'autoViaje':
+			$string = 'Su vehiculo posee viajes pendientes y no puede ser eliminado'; 
+		break;
 }
 ?>
 <div class="noSeEncontraronResultados">

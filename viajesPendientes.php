@@ -21,7 +21,7 @@ while ($viaje = mysqli_fetch_array($viajesPendientes)){
 			<a href="detalleViaje.php?id=<?php echo $idviaje ?>"><input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input></a>
 </table>
 <a href="verPostulantes.php?idviaje=<?php echo $idviaje ?>"><button class='botonViajePublicado'> Ver postulantes </button></a>
-<button class='botonViajePublicado'> Editar </button>
+<a href="formularioEditarViaje.php?idviaje=<?php echo $idviaje?>"><button class='botonViajePublicado'> Editar </button></a>
 <button class='botonViajePublicado'> Eliminar </button>
 
 <?php }
