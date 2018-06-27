@@ -25,7 +25,10 @@
 </form>
 </div>
 <?php
-$viajes = mysqli_query($link, 'SELECT * FROM viaje');
+$unmes = date('Y-m-d');
+$unmes = strtotime ( '+30 day',strtotime($unmes)) ;
+$unmes = date ( 'Y-m-d' , $unmes );
+$viajes = mysqli_query($link, "SELECT * FROM viaje WHERE realizado = '0' and dia < '$unmes' ORDER BY dia,hora ");
 while ($viaje = mysqli_fetch_array($viajes)){
 			$patente = $viaje['patente'];
 			$vehiculo = mysqli_query($link, "SELECT * FROM vehiculo WHERE patente = '$patente'");
