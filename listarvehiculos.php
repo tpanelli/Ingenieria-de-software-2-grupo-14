@@ -13,7 +13,7 @@
 	 else {
 	 while ($autocorrecto = mysqli_fetch_array ($autoscorrectos)){
 		$patente = $autocorrecto['patente'];
-		$auto = mysqli_query($link, "SELECT * FROM `vehiculo` WHERE patente = '$patente'");
+		$auto = mysqli_query($link, "SELECT * FROM `vehiculo` WHERE patente = '$patente' and  mail='$mail'");
 		while ($datos = mysqli_fetch_array ($auto)){?>
 		<table class="mostrarauto"><tr>
 			<td class="nombre"><img class="imagenauto" src= "<?php echo "mostrarImagen.php?patente=$patente";?>"><td>
