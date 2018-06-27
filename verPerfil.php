@@ -10,6 +10,7 @@
   $link = conectar();
   $result = mysqli_query($link,"select * from usuario where mail = '$_GET[mail]'");
   $row = mysqli_fetch_array($result);
+  if ($row['activo'] == 1){
   $calificacionP=mysqli_query($link,"select sum(puntaje) / count(*) as promedio from calificaciones where mailvotado ='$_GET[mail]' and rol='pasajero' and realizado = '1'");
   $calificacionC=mysqli_query($link,"select sum(puntaje) / count(*) as promedio from calificaciones where mailvotado ='$_GET[mail]' and rol='conductor' and realizado = '1'");
   $cantConductor = mysqli_num_rows( mysqli_query($link,"select * from calificaciones where mailvotado ='$_GET[mail]' and rol='conductor' and realizado = '1'"));
@@ -60,5 +61,12 @@
 	 Conductor: <?php echo $cc['promedio']*100?>% <div style="font-size:15px">sobre <?php echo $cantConductor ?> calificaciones</div><br>
 	 Pasajero: <?php echo $cp['promedio']*100?>% <div style="font-size:15px">sobre <?php echo $cantPasajero ?> calificaciones</div>
 </div>
+  <?php } 
+  else { ?>
+	  <div class="noSeEncontraronResultados">
+	<?php echo 'El usuario ya no se encuentra en el sistema'; ?><br><br>
+	<button class="botonLogin" onclick="goBack()">Volver</button>
+</div>
+ <?php }?>
 </body>
 </html>

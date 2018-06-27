@@ -67,6 +67,9 @@ switch($tipo){
 		case 'autoViaje':
 			$string = 'Su vehiculo posee viajes pendientes y no puede ser eliminado'; 
 		break;
+		case 'viajesPendientes':
+			$string = '*Error: Usted posee viajes publicados pendientes. No puede eliminar su cuenta.'; 
+		break;
 }
 ?>
 <div class="noSeEncontraronResultados">
