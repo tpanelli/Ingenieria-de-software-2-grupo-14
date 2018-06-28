@@ -8,7 +8,7 @@ if (mysqli_num_rows($postulaciones) == 0) { ?>
 ?>
 <div style="margin: 2% 32% 2% 28%"class="noSeEncontraronResultados" >Viajes postulados</div>
 <?php
-while ($postulacion = mysqli_fetch_array($postulaciones)){
+	while ($postulacion = mysqli_fetch_array($postulaciones)){
 			$idviaje = $postulacion ['idviaje'];
 			$viaje = mysqli_query($link, "SELECT * FROM viaje WHERE idviaje = '$idviaje'");
 			$viaje = mysqli_fetch_array($viaje);
@@ -26,13 +26,24 @@ while ($postulacion = mysqli_fetch_array($postulaciones)){
 			<div class="precio"><?php echo '$', $viaje['costo']; ?></div>
 			<a href="detalleViaje.php?id=<?php echo $idviaje ?>"><input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input></a>
 </table>
-<button class='botonViajePublicado'> Estado: <?php $aceptado = $postulacion ['aceptado'];
+<button class='botonViajePublicado' disabled> Estado: <?php $aceptado = $postulacion ['aceptado'];
 													switch($aceptado){
 															case 0: echo 'pendiente<br>'; break;
 															case 1: echo 'aceptado<br>'; break;
 															case 2: echo 'rechazado<br>'; break;
 													}?> 
 </button>
-<button class='botonViajePublicado'> Salir del viaje </button>
-<?php } 
+<?php
+		if($aceptado==1){
+?>
+		<a href="salirViaje.php?mail=<?php echo $mail?>"><button class="botonViajePublicado" onclick="return Confirmar('¿Esta seguro que desea bajarse del viaje? Habra una penalizacion de 1 punto por estar aceptado.')"> Salir del viaje </button></a>
+<?php 
+		}else{
+			if($aceptado==0){
+				?>
+				<a href="salirViaje.php?mail=<?php echo $mail?>"><button class="botonViajePublicado" onclick="return Confirmar('¿Esta seguro que desea bajarse del viaje?')"> Salir del viaje </button></a>
+				<?php
+			}
+		}
+	} 
 }?>
