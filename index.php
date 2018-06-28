@@ -43,8 +43,7 @@ while ($viaje = mysqli_fetch_array($viajes)){
 			<div class="precio"><?php echo '$', $viaje['costo']; ?></div>
 			<a href="detalleViaje.php?id=<?php echo $idviaje ?>"><input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input></a>
 		</table>
-<?php } 
-include 'validarViajesRealizados.php';?>
+<?php } ?>
 		
 </body>
 </html>

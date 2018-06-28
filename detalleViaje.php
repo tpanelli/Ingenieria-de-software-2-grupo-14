@@ -70,12 +70,12 @@ if($datos['realizado'] == 0){
 </div>
 <?php }
 } else { ?>
-<div style="width:28%;height:55%;"class="cuadradoViaje"> 
+<div style="width:30%;height:55%;"class="cuadradoViaje"> 
 	 Origen: <?php echo $datos['ciudadOrigen'];?><br><br>
 	 Destino: <?php echo $datos ['ciudadDestino'];?><br><br>
 	 Salida: <?php $dia = $datos ['dia']; echo date("d/m/Y", strtotime($dia)), ' - ', substr($datos ['hora'], 0, -3),' hs.';?><br><br>
 	 Duracion: <?php echo substr($datos ['duracion'], 0, -3),' hs.'; ?>
-	 <div class="conductorViaje">
+	 <div style="width: 93%" class="conductorViaje">
 	  <?php echo $vehiculo ['marca'],' ', $vehiculo ['modelo']; ?> <br><br>
 	  <?php echo 'Color: ', $vehiculo['color']; ?> <br><br>
 	  Conductor: <a href='verPerfil.php?mail=<?php echo $usuario['mail']?>' > <?php echo $usuario['nombre'],' ', $usuario['apellido'] ?> </a><br><br>
