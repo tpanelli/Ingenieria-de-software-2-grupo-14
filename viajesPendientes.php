@@ -18,11 +18,20 @@ while ($viaje = mysqli_fetch_array($viajesPendientes)){
 			<td class="nombre"><?php echo substr($viaje ['hora'], 0, -3) ;?><td>
 			<td class="nombre">Asientos: <?php include 'calcularAsientosDisponibles.php'; ?> <td>
 			<div class="precio"><?php echo '$', $viaje['costo']; ?></div>
-			<a href="detalleViaje.php?id=<?php echo $idviaje ?>"><input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" onclick="return Eliminar()"></input></a>
+			<a href="detalleViaje.php?id=<?php echo $idviaje ?>"><input name="eliminar" value="Ver viaje" type="submit" class="botonEliminar" input></a>
 </table>
 <a href="verPostulantes.php?idviaje=<?php echo $idviaje ?>"><button class='botonViajePublicado'> Ver postulantes </button></a>
 <a href="formularioEditarViaje.php?idviaje=<?php echo $idviaje?>"><button class='botonViajePublicado'> Editar </button></a>
-<button class='botonViajePublicado'> Eliminar </button>
-
-<?php }
+<?php
+		$pasajeros=mysqli_query($link, "SELECT * FROM viaje_usuario WHERE idviaje = '$idviaje' and aceptado = '1'");
+		if(mysqli_num_rows($pasajeros) != 0){
+?>
+			<a href="eliminarViaje.php?idviaje=<?php echo $idviaje?>"></><button class='botonViajePublicado' onclick="return Confirmar('¿Esta seguro que desea eliminar el viaje? Habra una penalizacion de 3 puntos por tener pasajeros aceptados')"> Eliminar </button>
+<?php 
+		}else{
+			?>
+			<a href="eliminarViaje.php?idviaje=<?php echo $idviaje?>"></><button class='botonViajePublicado' onclick="return Confirmar('¿Esta seguro que desea eliminar el viaje?')"> Eliminar </button>
+			<?php
+		}
+	}
 ?>

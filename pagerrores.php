@@ -70,6 +70,9 @@ switch($tipo){
 		case 'viajesPendientes':
 			$string = '*Error: Usted posee viajes publicados pendientes. No puede eliminar su cuenta.'; 
 		break;
+		case 'viajeEliminado':
+			$string = 'Su viaje fue eliminado con exito'; 
+		break;
 }
 ?>
 <div class="noSeEncontraronResultados">
