@@ -13,7 +13,9 @@ $pago = mysqli_fetch_array($pagos);
 		$mail=$viaje['mail'];
 		$usuarios = mysqli_query($link, "SELECT * FROM usuario WHERE mail='$mail'");
 		$usuario = mysqli_fetch_array($usuarios);
+		if($pago['rol'] == 'pasajero'){
 			mysqli_query($link,"UPDATE usuario SET saldo=saldo+$monto WHERE mail='$mail'");
+		} 
 	mysqli_query($link,"UPDATE pago SET realizado=1 WHERE idpago='$idpago'");
 	header('Location: pagoRealizado.php');
 
