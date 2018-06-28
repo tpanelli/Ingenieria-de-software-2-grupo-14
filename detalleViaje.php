@@ -58,8 +58,8 @@ if($datos['realizado'] == 0){
 	$calificacionPendiente = mysqli_query($link, "SELECT * FROM calificaciones WHERE idviaje = '$idviaje' and mailvoto = '$_SESSION[mail]' and realizado = '0'");
 	if (mysqli_num_rows($calificacionPendiente) > 0){
 ?>
-<div class="cuadradoReservar">
-	<div style="margin:2% 1% 6% 15%;font-size:30px">Califica al conductor!</div>
+<div style="height:30%" class="cuadradoReservar">
+	<div style="margin:2% 1% 6% 15%;font-size:30px">Califica al conductor</div>
 	<form action="enviarCalificacion.php"method="post">
 	<input name="idviaje" value="<?php echo $_GET['id'];?>" type="hidden"></input> 
 	<input name="mail" value="<?php echo $_SESSION['mail'];?>" type="hidden"></input> 
@@ -72,7 +72,7 @@ if($datos['realizado'] == 0){
 </div>
 <?php }
 } else { ?>
-<div style="width:30%;height:55%;"class="cuadradoViaje"> 
+<div style="width:30%;height:55%; margin-bottom:10%"class="cuadradoViaje"> 
 	 Origen: <?php echo $datos['ciudadOrigen'];?><br><br>
 	 Destino: <?php echo $datos ['ciudadDestino'];?><br><br>
 	 Salida: <?php $dia = $datos ['dia']; echo date("d/m/Y", strtotime($dia)), ' - ', substr($datos ['hora'], 0, -3),' hs.';?><br><br>

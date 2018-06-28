@@ -1,7 +1,7 @@
 <?php
 include "barra.php";
 $mail = $_SESSION['mail'];
-$calificaciones = mysqli_query($link, "SELECT * FROM calificaciones WHERE mailvoto = '$mail' and realizado='0'");
+$calificaciones = mysqli_query($link, "SELECT * FROM calificaciones WHERE mailvoto = '$mail' and realizado='0' GROUP BY idviaje");
 ;
 if (mysqli_num_rows($calificaciones)==0){ ?>
      <div class="noSeEncontraronResultados">Usted no debe calificaciones<br><br>

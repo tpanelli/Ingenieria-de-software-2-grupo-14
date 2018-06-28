@@ -2,7 +2,7 @@
 include "barra.php";
 $mail = $_SESSION['mail'];
 $fecha_actual = date("y-m-d");
-$viajesPendientes = mysqli_query($link, "SELECT * FROM viaje WHERE mail = '$mail' and realizado = '0'");
+$viajesPendientes = mysqli_query($link, "SELECT * FROM viaje WHERE mail = '$mail' and realizado = '0' ORDER BY dia,hora");
 ?>
  <div style="margin: 2% 32% 2% 28%"class="noSeEncontraronResultados" >Viajes pendientes</div>
 <?php
@@ -26,11 +26,11 @@ while ($viaje = mysqli_fetch_array($viajesPendientes)){
 		$pasajeros=mysqli_query($link, "SELECT * FROM viaje_usuario WHERE idviaje = '$idviaje' and aceptado = '1'");
 		if(mysqli_num_rows($pasajeros) != 0){
 ?>
-			<a href="eliminarViaje.php?idviaje=<?php echo $idviaje?>"></><button class='botonViajePublicado' onclick="return Confirmar('¿Esta seguro que desea eliminar el viaje? Habra una penalizacion de 3 puntos por tener pasajeros aceptados')"> Eliminar </button>
+			<a href="eliminarViaje.php?idviaje=<?php echo $idviaje?>"></><button class='botonViajePublicado' onclick="return Confirmar('¿Esta seguro que desea eliminar el viaje? Habra una penalizacion de 3 puntos por tener pasajeros aceptados')"> Eliminar </button></a>
 <?php 
 		}else{
 			?>
-			<a href="eliminarViaje.php?idviaje=<?php echo $idviaje?>"></><button class='botonViajePublicado' onclick="return Confirmar('¿Esta seguro que desea eliminar el viaje?')"> Eliminar </button>
+			<a href="eliminarViaje.php?idviaje=<?php echo $idviaje?>"></><button class='botonViajePublicado' onclick="return Confirmar('¿Esta seguro que desea eliminar el viaje?')"> Eliminar </button></a>
 			<?php
 		}
 	}

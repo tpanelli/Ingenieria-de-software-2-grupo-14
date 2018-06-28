@@ -2,7 +2,7 @@
 include "barra.php";
 $mail = $_SESSION['mail'];
 $fecha_actual = date("y-m-d");
-$viajesFinalizados = mysqli_query($link, "SELECT * FROM viaje WHERE mail = '$mail' and realizado='1'");
+$viajesFinalizados = mysqli_query($link, "SELECT * FROM viaje WHERE mail = '$mail' and realizado='1' ORDER BY dia,hora");
 ?>
  <div style="margin: 2% 32% 2% 28%"class="noSeEncontraronResultados" >Viajes finalizados</div>
 <?php

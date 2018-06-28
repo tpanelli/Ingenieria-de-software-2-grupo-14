@@ -1,6 +1,6 @@
 <?php include "barra.php"; 
 $mail = $_SESSION['mail'];
-$postulaciones = mysqli_query($link, "SELECT * FROM viaje_usuario WHERE mail = '$mail'");
+$postulaciones = mysqli_query($link, "SELECT * FROM viaje_usuario WHERE mail = '$mail' ORDER BY idpasajero DESC");
 if (mysqli_num_rows($postulaciones) == 0) { ?>
 	 <div class="noSeEncontraronResultados">Usted no se ha postulado a ningun viaje<br><br></div>
 	 <?php
