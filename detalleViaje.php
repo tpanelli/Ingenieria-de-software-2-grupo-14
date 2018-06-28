@@ -31,9 +31,11 @@ if($datos['realizado'] == 0){
 	<input name="idviaje" value="<?php echo $_GET['id'];?>" type="hidden"></input> 
 	<input name="mail" value="<?php echo $_SESSION['mail'];?>" type="hidden"></input>
 	<input name="disponibles" value="<?php echo $disponibles?>" type="hidden"></input> 
-		<?php if ( $mail != $_SESSION['mail']){ ?>
-	<input name="eliminar" value="Postularse" type="submit" class="botonPostularse" onclick="return Eliminar()"></input>
-		<?php } ?>
+<?php if($objeto->Logueado()){
+		if ( $mail != $_SESSION['mail']){ ?>
+			<input name="eliminar" value="Postularse" type="submit" style="margin-top:-3%" class="botonPostularse" onclick="return Eliminar()"></input>
+		<?php } 
+    } ?>
 	</form>
 </div>
 <?php

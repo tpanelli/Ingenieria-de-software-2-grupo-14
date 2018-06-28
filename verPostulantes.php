@@ -2,7 +2,7 @@
 $idviaje = $_GET ['idviaje'];
 $postulantes = mysqli_query ($link, "SELECT * FROM viaje_usuario WHERE idviaje = $idviaje");
 ?>
-<h1 style="color: black;margin-left:80px"> Postulantes </h1>
+<div style="margin: 2% 32% 2% 28%"class="noSeEncontraronResultados" >Postulantes</div>
 <table id="t01" class="postular">
 <tr>
     <th class="nombre">Nombre y apellido</th>
@@ -29,11 +29,11 @@ while ($postulante = mysqli_fetch_array($postulantes)){
 									}?></td>
 			<?php
 			switch($aceptado){
-				case 0:?><td class="nombre"><a href='responderPostulante.php?mail=<?php echo$mail ?>&id=1&idviaje=<?php echo$idviaje ?>'><button class='botonEliminar'> Aceptar </button></a> 
-						<td class="nombre"><a href='responderPostulante.php?mail=<?php echo$mail ?>&id=2&idviaje=<?php echo$idviaje ?>'><button class='botonEliminar'> Rechazar </button></a> </td>
+				case 0:?><td class="nombre"><a href='responderPostulante.php?mail=<?php echo$mail ?>&id=1&idviaje=<?php echo$idviaje ?>'><button class='botonEliminar' onclick="return Confirmar('¿Esta seguro que desea aceptar al pasajero?')"> Aceptar </button></a> 
+						<td class="nombre"><a href='responderPostulante.php?mail=<?php echo$mail ?>&id=2&idviaje=<?php echo$idviaje ?>'><button class='botonEliminar' onclick="return Confirmar('¿Esta seguro que desea rechazar al pasajero?')"> Rechazar </button></a> </td>
 		<?php ; break;
 				case 1:?>
-						<td class="nombre"><a href='responderPostulante.php?mail=<?php echo$mail ?>&id=3&idviaje=<?php echo$idviaje ?>'><button class='botonEliminar'onclick="return Confirmar('¿Esta seguro que desea eliminar al pasajero?')"> Eliminar </button></a> </td>
+						<td class="nombre"><a href='responderPostulante.php?mail=<?php echo$mail ?>&id=3&idviaje=<?php echo$idviaje ?>'><button class='botonEliminar'onclick="return Confirmar('¿Esta seguro que desea eliminar al pasajero? Recibira 1 punto de penalizacion')"> Eliminar </button></a> </td>
 		<?php ; break;
 				case 2:?>
 						<td class="nombre">'El pasajero ha sido rechazado'</td>

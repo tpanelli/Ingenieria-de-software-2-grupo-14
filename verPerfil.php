@@ -8,6 +8,7 @@
  include 'barra.php';
  include_once"archivoconexion.php";
   $link = conectar();
+  if($objeto->Logueado()){
   $result = mysqli_query($link,"select * from usuario where mail = '$_GET[mail]'");
   $row = mysqli_fetch_array($result);
   if ($row['activo'] == 1){
@@ -67,6 +68,13 @@
 	<?php echo 'El usuario ya no se encuentra en el sistema'; ?><br><br>
 	<button class="botonLogin" onclick="goBack()">Volver</button>
 </div>
- <?php }?>
+ <?php }
+  }
+  else { ?>
+	  <div class="noSeEncontraronResultados">
+	<?php echo 'Debe iniciar sesion para ver el perfil de otros usuarios'; ?><br><br>
+	<button class="botonLogin" onclick="goBack()">Volver</button>
+</div>
+ <?php } ?>
 </body>
 </html>

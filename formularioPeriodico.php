@@ -1,5 +1,5 @@
 <form name="publicar" action="publicarViajePeriodico.php" method="post" class="input" enctype="multipart/form-data"> 
-<div class="cuadradoViaje"> 
+<div style="height: 65%" class="cuadradoViaje"> 
 	 Origen: <select name="origen" required/>
 							<option value="" disabled selected>Origen</option>
 					<?php
@@ -35,7 +35,7 @@
 	 <input type="checkbox" name="dias[]" value="Sunday"> Domingo</input><br><br>
 	 Tipo: Periodico <br><br> 
 	Costo por asiento: <input type="number" name="costo" required/></input> 
-	 <div class="conductorViaje">
+	 <div style="height: 42%" class="conductorViaje">
 	  <?php $usuario =  mysqli_query($link, "SELECT * FROM usuario WHERE mail = '$mail'");
 			$usuario =  mysqli_fetch_array($usuario); ?>
 	Vehiculo: <select name="patente" required/>
@@ -51,7 +51,6 @@
 	  Conductor: <a href='verPerfil.php' > <?php echo $usuario['nombre'],' ', $usuario['apellido'] ?> </a><br><br>
 	  Detalle: <br> <textarea name="detalle" style="resize:none;height:80px;width:500px;" required/></textarea>
 	 </div>
+	 <input type="submit" class='botonViajePublicado'></input>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<input type="submit" class='botonViajePublicado'></input>
 </form>
