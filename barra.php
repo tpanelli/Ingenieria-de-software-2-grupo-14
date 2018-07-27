@@ -35,7 +35,6 @@
 <div>
 <ul>
   <li><a href="index.php">Inicio</a></li>
-  <li><a href="pagerrores.php?errores=construccion">Quienes somos?</a></li>
   <?php if($objeto->Logueado()){ ?>
   <li class="dropdown">
     <a class="dropbtn">Mis viajes</a>
@@ -51,5 +50,8 @@
   <li><a href="calificacionesPendientes.php">Calificaciones pendientes</a></li>
   <?php } 
   include 'validarViajesRealizados.php';?>
+  <li><a href="quienes.php">Quienes somos</a></li>
+  <li><a href="contacto.php">Contacto</a></li>
+  <li><a href="ayuda.php">Ayuda</a></li>
 </ul>
 </div>

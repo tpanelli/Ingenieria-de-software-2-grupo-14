@@ -645,3 +645,16 @@ table#t01 th {
     color: white;
 }
 
+.caballoContacto {
+    width:90%;
+    padding:12px 20px;
+    margin:7px 15px ;
+    box-sizing:border-box;
+    border:none;
+	border-radius:9px;
+	resize:none;
+	height:80px;
+    background-color:white;
+    color:black;
+	
+}
