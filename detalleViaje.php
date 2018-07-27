@@ -4,6 +4,12 @@ $viaje = mysqli_query($link, "SELECT * FROM viaje WHERE idviaje = '$idviaje'");
 $datos = mysqli_fetch_array($viaje);
 $patente = $datos['patente'];
 $mail = $datos ['mail'];
+if($objeto->Logueado()){
+	$mail1 = $_SESSION['mail'];
+$aceptados = mysqli_query($link, "SELECT * FROM viaje_usuario WHERE idviaje = '$idviaje' and mail = '$mail1'");
+$aceptados = mysqli_fetch_array($aceptados);
+$aceptado = $aceptados['aceptado'];
+}
 $vehiculo = mysqli_query($link, "SELECT * FROM vehiculo WHERE patente = '$patente' and mail = '$mail'");
 $vehiculo = mysqli_fetch_array($vehiculo);
 $usuario =  mysqli_query($link, "SELECT * FROM usuario WHERE mail = '$mail'");
@@ -31,6 +37,7 @@ if($datos['realizado'] == 0){
 	<input name="idviaje" value="<?php echo $_GET['id'];?>" type="hidden"></input> 
 	<input name="mail" value="<?php echo $_SESSION['mail'];?>" type="hidden"></input>
 	<input name="disponibles" value="<?php echo $disponibles?>" type="hidden"></input> 
+	<input name="aceptado" value="<?php echo $aceptado?>" type="hidden"></input>
 <?php if($objeto->Logueado()){
 		if ( $mail != $_SESSION['mail']){ ?>
 			<input name="eliminar" value="Postularse" type="submit" style="margin-top:-3%" class="botonPostularse" onclick="return Eliminar()"></input>

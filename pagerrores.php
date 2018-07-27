@@ -76,6 +76,9 @@ switch($tipo){
 		case 'bajado':
 			$string = 'Su postulacion fue cancelada con exito'; 
 		break;
+		case 'rechazado':
+			$string = '*Error: Usted ya fue rechazado en este viaje'; 
+		break;
 }
 ?>
 <div class="noSeEncontraronResultados">
