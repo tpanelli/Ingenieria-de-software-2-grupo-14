@@ -1,27 +1,47 @@
 <?php include "barra.php";?>
 <div class= "registrar2">
 <h1 style="color: Black;margin-left:110px; border-color: blue"> Busca tu viaje!</h1> 
-<form method="POST" class="input" action="pagerrores.php?errores=construccion">
-  <label> Origen </label>
-  <input type="text" id="contraseña1" class="caballo" name="password" placeholder="Origen...">
-  <label style="color: black"> Destino </label>
-  <input type="text" id="contraseña2" class="caballo"  name="nuevacontraseña" placeholder="Destino...">
+<form method="get" class="input" action="viajesBuscados.php">
+  <label  style="color: black">Origen</label>
+  <select class="caballo" name="o">
+		<option value="" disabled selected>Origen</option>
+		<?php
+			$result=mysqli_query($link, 'SELECT * FROM ciudad');
+			while ($row = mysqli_fetch_array ($result)){
+		?>
+				<option value="<?php echo $row['nombreciudad'] ?>"> <?php echo $row['nombreciudad']; ?></option>
+			<?php
+			}
+			?>
+	</select><br>
+  <label  style="color: black">Destino</label>
+  <select class="caballo" name="d" >
+		<option value="" disabled selected>Destino</option>
+		<?php
+			$result=mysqli_query($link, 'SELECT * FROM ciudad');
+			while ($row = mysqli_fetch_array ($result)){
+		?>
+				<option value="<?php echo $row['nombreciudad'] ?>"> <?php echo $row['nombreciudad']; ?></option>
+			<?php
+			}
+			?>
+	</select><br>
   <label style="color: black"> Fecha </label>
-  <input type="date" id="" class="caballo"  name="">
+  <input type="date" class="caballo" name="f" ></input>
   <label style="color: black"> Tipo </label>
-				<select class="caballo" name="tipo">
+				<select class="caballo" name="t">
 				    <option value="" disabled selected>Tipo</option>
 					<?php
 					    $link = conectar();
 						$result=mysqli_query($link, 'SELECT * FROM tipovehiculo');
 							while ($row = mysqli_fetch_array ($result)){
 									?>
-									<option value="<?php echo $row['tipo'] ?>"> <?php echo $row['tipo']; ?></option>
+									<option value="<?php echo $row['tipo'] ?>" > <?php echo $row['tipo']; ?></option>
 							<?php
 							}
 							?>
 			    </select>
-  <div><input type="submit" class="botonEntrar" value="Entrar" ></div>
+  <input type="submit" class="botonEntrar" value="Buscar" >
 </form>
 </div>
 <?php

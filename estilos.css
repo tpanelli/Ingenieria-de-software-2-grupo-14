@@ -658,3 +658,20 @@ table#t01 th {
     color:black;
 	
 }
+
+.viajesEncontrados{
+    text-align: left;
+	float: left;
+	display: inline-block;
+    font-weight: 900;
+    font-size: 30px;
+    border: 6px solid pink;
+    border-radius: 8px;
+    background-color: white;
+    opacity: 0.8;
+    margin-top: 15px;
+	margin-left: 2px;
+    margin-bottom: -10px;
+    padding: 12px;
+	text-decoration:none;
+}
