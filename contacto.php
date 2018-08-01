@@ -4,7 +4,7 @@
     mysqli_set_charset($link, "utf8");
 	include 'barra.php';
 ?>
-<div style="height: 60%" class="cuadradoViaje">
+<div style="height: 60%; margin-left:20%" class="cuadradoViaje">
 	<h1 style="color: black;margin-left:10px"> Para realizar alguna consulta sobre UnAventon, escribinos </h1>
 	<br>
 	<form name="comentar" method="post" action="consulta.php" onsubmit="return validarComent()">
