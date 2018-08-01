@@ -52,7 +52,7 @@ if($objeto->Logueado()){
 <div style="margin-top:34%">
 	<div style="margin: 2% 5% 2% 35%; width:21%"class="noSeEncontraronResultados" >Deja tu pregunta</div>
 	<form method="POST" action="preguntar.php">
-	<textarea style="width:50%; height:9%;float:left; margin-left:4%; background-color:white;color:black; font-size15px name="pregunta" class= "comentario"></textarea>
+	<textarea style="width:50%; height:9%;float:left; margin-left:4%; background-color:white;color:black; font-size15px" name="pregunta" class= "comentario"></textarea>
 	<input name="mail" value="<?php echo $_SESSION['mail'];?>" type="hidden"></input>
 	<input name="mailRespuesta" value="<?php echo $mail;?>" type="hidden"></input>
 	<input name="idviaje" value="<?php echo $_GET['id'];?>" type="hidden"></input> 
@@ -68,8 +68,8 @@ if($objeto->Logueado()){
 		
 		?>
 		<table style="margin-top"class="comentario"><tr>
-			<td>P:<?php echo $pregunta['pregunta'];?><td>
-			<td>Re:<?php echo $pregunta ['respuesta'];?><td>
+			<td>P:<?php echo ' ', $pregunta['pregunta'];?><td>
+			<td>Re:<?php echo ' ', $pregunta ['respuesta'];?><td>
 		</table>
 
 	<?php } ?>
@@ -85,7 +85,7 @@ if($objeto->Logueado()){
 	while($pregunta = mysqli_fetch_array($preguntas)){
 	?>
 		<table style="margin-top"class="comentario"><tr>
-			<td>P:<?php echo $pregunta['pregunta'] ?><td>
+			<td>P:<?php echo ' ', $pregunta['pregunta'] ?><td>
 			<td>Re:
 			<form method="POST" action="responder.php">
 			<textarea style="width:50%; height:9%;float:left; margin-left:15%; background-color:white;color:black" name="respuesta" class= "comentario" ></textarea>
@@ -97,12 +97,12 @@ if($objeto->Logueado()){
 		</table>
 <?php } ?>
 <?php 
-	$preguntas = mysqli_query($link, "SELECT * FROM preguntas WHERE idviaje ='$idviaje' AND respuesta != '' ");
+	$preguntas = mysqli_query($link, "SELECT * FROM preguntas WHERE idviaje ='$idviaje' AND respuesta != '' ORDER BY id DESC ");
 	while($pregunta = mysqli_fetch_array($preguntas)){
 			?>
 		<table style="margin-top"class="comentario"><tr>
-			<td>P:<?php echo $pregunta['pregunta'];?><td>
-			<td>Re:<?php echo $pregunta ['respuesta'];?><td>
+			<td>P:<?php echo ' ',$pregunta['pregunta'];?><td>
+			<td>Re:<?php echo ' ',$pregunta ['respuesta'];?><td>
 		</table>
 
 <?php } ?>
@@ -117,8 +117,8 @@ if($objeto->Logueado()){
 		
 		?>
 		<table style="margin-top"class="comentario"><tr>
-			<td>P:<?php echo $pregunta['pregunta'];?><td>
-			<td>Re:<?php echo $pregunta ['respuesta'];?><td>
+			<td>P:<?php echo ' ',$pregunta['pregunta'];?><td>
+			<td>Re:<?php echo ' ',$pregunta ['respuesta'];?><td>
 		</table>
 
 	<?php }
