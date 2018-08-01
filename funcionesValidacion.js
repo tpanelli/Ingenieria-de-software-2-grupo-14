@@ -77,5 +77,20 @@ function Confirmar($mensaje){
             }
 }
 
+function validarContraRecuperada(){
+	var ClaveNueva, ClaveNueva2; 
+	ClaveNueva = document.getElementById("contrasena").value;
+	ClaveNueva2 = document.getElementById("confirmar").value;
+
+	if (ClaveNueva != ClaveNueva2){
+		alert('Las claves nuevas no coinciden');
+		return false;
+	}
+	Confirmar('Se enviara un e-mail a la casilla ingresada. Confirme el cambio desde ese correo, y se hara efectivo en su cuenta. Esta seguro de que el mail ingresado es el de su cuenta?');
+	
+}
+
+
+
 
 
