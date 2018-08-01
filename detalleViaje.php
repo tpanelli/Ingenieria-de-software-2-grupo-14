@@ -1,4 +1,4 @@
-<?php include 'barra.php'; 
+ <?php include 'barra.php'; 
 $idviaje = $_GET['id'];
 $viaje = mysqli_query($link, "SELECT * FROM viaje WHERE idviaje = '$idviaje'");
 $datos = mysqli_fetch_array($viaje);
@@ -44,6 +44,85 @@ if($datos['realizado'] == 0){
 		<?php } 
     } ?>
 	</form>
+</div>
+
+<?php
+if($objeto->Logueado()){
+ if ($mail != $_SESSION['mail']){ ?>
+<div style="margin-top:34%">
+	<div style="margin: 2% 5% 2% 35%; width:21%"class="noSeEncontraronResultados" >Deja tu pregunta</div>
+	<form method="POST" action="preguntar.php">
+	<textarea style="width:50%; height:9%;float:left; margin-left:4%; background-color:white;color:black; font-size15px name="pregunta" class= "comentario"></textarea>
+	<input name="mail" value="<?php echo $_SESSION['mail'];?>" type="hidden"></input>
+	<input name="mailRespuesta" value="<?php echo $mail;?>" type="hidden"></input>
+	<input name="idviaje" value="<?php echo $_GET['id'];?>" type="hidden"></input> 
+	<input style="margin:2% 1% 2% 1% "name="eliminar" value="Enviar" type="submit" class="botonPostularse"></input>
+	</form>
+ 
+</div>
+<div style="margin-left:2%; float:left; width:80%; height: 55% "class="cuadrado">
+	<div style="color:white; font-size:25px; margin-left:2%">Preguntas</div>
+<?php 
+	$preguntas = mysqli_query($link, "SELECT * FROM preguntas WHERE idviaje ='$idviaje' ORDER BY id DESC");
+	while($pregunta = mysqli_fetch_array($preguntas)){
+		
+		?>
+		<table style="margin-top"class="comentario"><tr>
+			<td>P:<?php echo $pregunta['pregunta'];?><td>
+			<td>Re:<?php echo $pregunta ['respuesta'];?><td>
+		</table>
+
+	<?php } ?>
+</div>
+<?php
+}else{ 
+	$preguntas = mysqli_query($link, "SELECT * FROM preguntas WHERE idviaje ='$idviaje' and respuesta='' ORDER BY id DESC");
+ ?> 
+<div style="margin: 35% 22% 2% 35%; width:25%; height:8%"class="noSeEncontraronResultados" >Tienes <?php echo mysqli_num_rows($preguntas); ?> preguntas pendientes</div>
+<div style="margin-left:2%; float:left; width:80%; height: 55% "class="cuadrado">
+	<div style="color:white; font-size:25px; margin-left:2%">Preguntas</div>
+<?php 
+	while($pregunta = mysqli_fetch_array($preguntas)){
+	?>
+		<table style="margin-top"class="comentario"><tr>
+			<td>P:<?php echo $pregunta['pregunta'] ?><td>
+			<td>Re:
+			<form method="POST" action="responder.php">
+			<textarea style="width:50%; height:9%;float:left; margin-left:15%; background-color:white;color:black" name="respuesta" class= "comentario" ></textarea>
+			<input name="idviaje" value="<?php echo $_GET['id'];?>" type="hidden"></input> 
+			<input name="id" value="<?php echo $pregunta['id'];?>" type="hidden"></input> 
+	        <input style="margin:2% 1% 2% 1%;"name="eliminar" value="Enviar" type="submit" class="botonEliminar" onclick="return Eliminar()"></input>
+			</form>
+			<td>
+		</table>
+<?php } ?>
+<?php 
+	$preguntas = mysqli_query($link, "SELECT * FROM preguntas WHERE idviaje ='$idviaje' AND respuesta != '' ");
+	while($pregunta = mysqli_fetch_array($preguntas)){
+			?>
+		<table style="margin-top"class="comentario"><tr>
+			<td>P:<?php echo $pregunta['pregunta'];?><td>
+			<td>Re:<?php echo $pregunta ['respuesta'];?><td>
+		</table>
+
+<?php } ?>
+</div>
+<?php }
+}else{ ?>
+    <div style="margin-left:2%; float:left; width:80%; height: 55% "class="cuadrado">
+	<div style="color:white; font-size:25px; margin-left:2%">Preguntas</div>
+<?php 
+	$preguntas = mysqli_query($link, "SELECT * FROM preguntas WHERE idviaje ='$idviaje' ORDER BY id DESC");
+	while($pregunta = mysqli_fetch_array($preguntas)){
+		
+		?>
+		<table style="margin-top"class="comentario"><tr>
+			<td>P:<?php echo $pregunta['pregunta'];?><td>
+			<td>Re:<?php echo $pregunta ['respuesta'];?><td>
+		</table>
+
+	<?php }
+}	?>
 </div>
 <?php
 }else if ( $mail != $_SESSION['mail']){
